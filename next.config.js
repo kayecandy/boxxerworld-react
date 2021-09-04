@@ -7,4 +7,7 @@ module.exports = {
 
     return config;
   },
+  env: {
+    MODE: process.env.MODE,
+  },
 };
