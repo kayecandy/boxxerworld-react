@@ -1,0 +1,49 @@
+@import "~bootstrap/scss/bootstrap";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;700&display=swap");
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+button.btn {
+  border-radius: 0;
+  background: inherit;
+  border: none;
+  outline: none;
+
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 2px;
+
+  &:focus {
+    background-color: inherit;
+    border: none;
+    box-shadow: 0 0 0 0.25rem rgb(99 178 10 / 32%);
+  }
+
+  &.btn-primary {
+    background-color: #63b20b;
+    color: white;
+
+    &:hover {
+      background-color: #63b20b;
+      color: white;
+    }
+  }
+
+  &.btn-secondary {
+    background-color: #dedede;
+    color: #4a4a4a;
+
+    &:hover {
+      background-color: inherit;
+      color: inherit;
+    }
+  }
+}

@@ -1,0 +1,31 @@
+.cndce_controls_panel {
+  position: relative;
+  top: 60vh;
+  width: 100%;
+  min-height: 40vh;
+  background: #f5f5f5;
+  border-top: 1px solid #e0e0e0;
+  z-index: 1000;
+
+  &__header_wrapper {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem;
+
+    &__nav {
+      display: flex;
+      width: 700px;
+      margin: 0 auto;
+      justify-content: space-between;
+      text-align: center;
+
+      :global(.nav-link) {
+        color: inherit;
+      }
+    }
+  }
+
+  &__content_wrapper {
+    width: 700px;
+    margin: 0 auto;
+  }
+}

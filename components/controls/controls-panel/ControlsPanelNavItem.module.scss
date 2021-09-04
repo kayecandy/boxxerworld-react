@@ -1,0 +1,33 @@
+.cndce_controls_nav_link {
+  .cndce_controls_headers {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    align-items: center;
+
+    &__title {
+      font-size: 0.9rem;
+      margin-top: 0.3rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    &__title,
+    svg path {
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &:hover .cndce_controls_headers,
+  &:global(.active) .cndce_controls_headers {
+    &__title,
+    svg path {
+      color: #63b20b;
+      fill: #63b20b;
+    }
+
+    svg path[class$="with-stroke"] {
+      stroke: #63b20b;
+    }
+  }
+}

@@ -1,0 +1,41 @@
+.cndce_controls_summary_parts {
+  &__row {
+    background-color: #dedede;
+    border-top: 1px solid white;
+    cursor: pointer;
+    font-size: 85%;
+    letter-spacing: 1px;
+
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #c3c3c3;
+    }
+
+    &_preview {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+
+      background-size: cover;
+    }
+
+    &_name {
+      color: #63b20b;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    &_selected {
+      text-transform: uppercase;
+      font-size: 82%;
+      font-weight: 400;
+
+      :global(.no-material) {
+        font-style: italic;
+        text-transform: capitalize;
+        color: gray;
+      }
+    }
+  }
+}
