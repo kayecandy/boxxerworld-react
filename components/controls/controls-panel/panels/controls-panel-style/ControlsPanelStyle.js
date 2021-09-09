@@ -19,31 +19,6 @@ export default function ControlsPanelStyle() {
   return (
     <div className={`${style.cndce_control_panel_style} py-4`}>
       <Row>
-        {/* Leg Cuts */}
-        <Col xs={6}>
-          <div>Choose Leg Cut</div>
-          <hr></hr>
-
-          <Row>
-            {_config.legCuts.map((legCut) => (
-              <Col
-                key={legCut.id}
-                className={style.cndce_control_panel_style__legcut}
-                xs="auto"
-                onClick={onLegCutClick.bind(legCut)}
-              >
-                <div
-                  className={style.cndce_control_panel_style__legcut_img}
-                  style={{
-                    backgroundImage: legCut.img,
-                  }}
-                ></div>
-                <div>{legCut.title}</div>
-              </Col>
-            ))}
-          </Row>
-        </Col>
-
         {/* Short Sizes */}
         <Col xs={6}>
           <div>Choose your style</div>
@@ -64,6 +39,31 @@ export default function ControlsPanelStyle() {
                   }}
                 ></div>
                 <div>{shortSize.title}</div>
+              </Col>
+            ))}
+          </Row>
+        </Col>
+
+        {/* Leg Cuts */}
+        <Col xs={6}>
+          <div>Choose Leg Cut</div>
+          <hr></hr>
+
+          <Row>
+            {_config.legCuts.map((legCut) => (
+              <Col
+                key={legCut.id}
+                className={style.cndce_control_panel_style__legcut}
+                xs="auto"
+                onClick={onLegCutClick.bind(legCut)}
+              >
+                <div
+                  className={style.cndce_control_panel_style__legcut_img}
+                  style={{
+                    backgroundImage: legCut.img,
+                  }}
+                ></div>
+                <div>{legCut.title}</div>
               </Col>
             ))}
           </Row>
