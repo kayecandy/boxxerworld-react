@@ -1,9 +1,12 @@
 import { useGLTF } from "@react-three/drei";
 import { useEffect, useState } from "react";
+import { BufferGeometry } from "three";
 
 /**
  * Uses `useGLTF` and returns the geometry of
  * the loaded model
+ *
+ * @returns {BufferGeometry | BufferGeometry[]}
  */
 export function useModelGeometries(models) {
   const nodes = useGLTF(models.map((model) => model.url));

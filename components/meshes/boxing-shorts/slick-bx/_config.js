@@ -29,20 +29,6 @@ const CONTENT = {
       },
     },
     {
-      id: "back-bottom",
-      name: "Large Panel",
-      url: "3d/boxing-shorts/slick-bx/back-bottom.glb",
-      material: {
-        color: "#eeeeee",
-        normalScale: [-0.25, 0.25],
-        roughness: 0.6,
-        metalness: 0,
-        transparent: false,
-        emissive: "#000000",
-        emissiveIntensity: 1,
-      },
-    },
-    {
       id: "garter",
       name: "Waistband",
       url: "3d/boxing-shorts/slick-bx/garter.glb",
@@ -70,35 +56,95 @@ const CONTENT = {
         emissiveIntensity: 1,
       },
     },
-
+  ],
+  variations: [
     {
-      id: "stitching-bottom",
-      name: "Leg Trim",
-      url: "3d/boxing-shorts/slick-bx/stitching-bottom.glb",
-      material: {
-        color: "#eeeeee",
-        normalScale: [-0.25, 0.25],
-        roughness: 0.6,
-        metalness: 0,
-        transparent: false,
-        emissive: "#000000",
-        emissiveIntensity: 1,
-      },
+      legCut: "side-slit",
+      size: "standard",
+      parts: [
+        {
+          id: "back-bottom",
+          name: "Large Panel",
+          url: "3d/boxing-shorts/slick-bx/back-bottom_side-slit.glb",
+          material: {
+            color: "#eeeeee",
+            normalScale: [-0.25, 0.25],
+            roughness: 0.6,
+            metalness: 0,
+            transparent: false,
+            emissive: "#000000",
+            emissiveIntensity: 1,
+          },
+        },
+        {
+          id: "stitching-bottom",
+          name: "Leg Trim",
+          url: "3d/boxing-shorts/slick-bx/stitching-bottom_side-slit.glb",
+          material: {
+            color: "#eeeeee",
+            normalScale: [-0.25, 0.25],
+            roughness: 0.6,
+            metalness: 0,
+            transparent: false,
+            emissive: "#000000",
+            emissiveIntensity: 1,
+          },
+        },
+      ],
     },
-
     {
-      id: "tassels",
-      name: "Tassels",
-      url: "3d/boxing-shorts/slick-bx/tassels.glb",
-      material: {
-        color: "#eeeeee",
-        normalScale: [-0.25, 0.25],
-        roughness: 0.6,
-        metalness: 0,
-        transparent: false,
-        emissive: "#000000",
-        emissiveIntensity: 1,
-      },
+      legCut: "curve",
+      size: "standard",
+      parts: [
+        {
+          id: "back-bottom",
+          name: "Large Panel",
+          url: "3d/boxing-shorts/slick-bx/back-bottom_curve.glb",
+          material: {
+            color: "#eeeeee",
+            normalScale: [-0.25, 0.25],
+            roughness: 0.6,
+            metalness: 0,
+            transparent: false,
+            emissive: "#000000",
+            emissiveIntensity: 1,
+          },
+        },
+
+        {
+          id: "stitching-bottom",
+          name: "Leg Trim",
+          url: "3d/boxing-shorts/slick-bx/stitching-bottom_curve.glb",
+          material: {
+            color: "#eeeeee",
+            normalScale: [-0.25, 0.25],
+            roughness: 0.6,
+            metalness: 0,
+            transparent: false,
+            emissive: "#000000",
+            emissiveIntensity: 1,
+          },
+        },
+      ],
+    },
+    {
+      hasTassels: true,
+      parts: [
+        {
+          id: "tassels",
+          name: "Tassels",
+          url: "3d/boxing-shorts/slick-bx/tassels.glb",
+          material: {
+            color: "#eeeeee",
+            normalScale: [-0.25, 0.25],
+            roughness: 0.6,
+            metalness: 0,
+            transparent: false,
+            emissive: "#000000",
+            emissiveIntensity: 1,
+          },
+        },
+      ],
     },
   ],
 };

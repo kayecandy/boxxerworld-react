@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 
 export const CurrentModelPartContext = React.createContext();
 
 export default function CurrentModelPartContextProvider(props) {
   const currentModelPartState = useState();
-  const [currentModelPart] = currentModelPartState;
 
   return (
     <CurrentModelPartContext.Provider

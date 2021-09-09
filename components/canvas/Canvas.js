@@ -1,12 +1,12 @@
 import { OrbitControls, useContextBridge } from "@react-three/drei";
 import { Canvas as CanvasR3F } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
+import { CurrentLegStyleContext } from "../configurator/context/CurrentLegStyleContext";
 import { useCurrentModel } from "../configurator/context/CurrentModelContext";
-import {
-  CurrentModelPartContext,
-  useCurrentModelPart,
-} from "../configurator/context/CurrentModelPartContext";
-import ConfiguratorModel from "../meshes/ConfiguratorModel";
+import { CurrentModelPartContext } from "../configurator/context/CurrentModelPartContext";
+import { CurrentShortSizeContext } from "../configurator/context/CurrentShortSizeContext";
+import { HasTasselsContext } from "../configurator/context/HasTasselsContext";
+import BoxingShortsModel from "../meshes/BoxingShortsModel";
 import styles from "./Canvas.module.scss";
 import _config from "./_config";
 
@@ -22,7 +22,12 @@ export default function Canvas({
 
   const [currentModel] = useCurrentModel();
 
-  const ContextBridge = useContextBridge(CurrentModelPartContext);
+  const ContextBridge = useContextBridge(
+    CurrentModelPartContext,
+    CurrentLegStyleContext,
+    CurrentShortSizeContext,
+    HasTasselsContext
+  );
 
   useEffect(() => {
     function resize() {
@@ -61,7 +66,7 @@ export default function Canvas({
         <OrbitControls {...orbitControls}></OrbitControls>
 
         <ContextBridge>
-          <ConfiguratorModel model={currentModel.models}></ConfiguratorModel>
+          <BoxingShortsModel model={currentModel}></BoxingShortsModel>
         </ContextBridge>
       </CanvasR3F>
     </div>

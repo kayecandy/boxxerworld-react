@@ -1,6 +1,4 @@
-import { useTexture } from "@react-three/drei";
 import { useEffect, useRef, useState } from "react";
-import { RepeatWrapping } from "three";
 import { useCurrentModelPart } from "../configurator/context/CurrentModelPartContext";
 import ConfiguratorMeshMaterial from "./ConfiguratorMeshMaterial";
 import { withSuspense } from "./withSuspense";

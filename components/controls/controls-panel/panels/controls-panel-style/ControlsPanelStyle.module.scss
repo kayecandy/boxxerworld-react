@@ -1,0 +1,18 @@
+.cndce_control_panel_style {
+  &__legcut {
+    cursor: pointer;
+
+    &_img {
+      width: 100px;
+      height: 111px;
+      background-size: 100% auto;
+      background-repeat: no-repeat;
+      // transition: all 0.15s ease-in-out;
+      background-position: center 105%;
+
+      :hover > & {
+        background-position: center 0%;
+      }
+    }
+  }
+}

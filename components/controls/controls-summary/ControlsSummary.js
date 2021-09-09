@@ -8,17 +8,19 @@ export default function ControlsSummary() {
   const [currentModelPart] = useCurrentModelPart();
 
   return (
-    <div className={style.cndce_controls_summary}>
+    <div
+      className={`${style.cndce_controls_summary} ${
+        currentModelPart ? "" : "d-none"
+      }`}
+    >
       <Accordion>
         <Accordion.Item>
           <Accordion.Header>
             <div className="accordion-header-text">Summary</div>
           </Accordion.Header>
           <Accordion.Body className="p-0">
-            {currentModelPart ? (
+            {currentModelPart && (
               <ControlsSummaryColors></ControlsSummaryColors>
-            ) : (
-              <ControlsSummaryParts></ControlsSummaryParts>
             )}
           </Accordion.Body>
         </Accordion.Item>
