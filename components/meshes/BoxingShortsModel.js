@@ -12,16 +12,17 @@ function BoxingShortsModel({ model, ...props }) {
   const [currentShortSize] = useCurrentShortSize();
   const [hasTassels] = useHasTassels();
 
-  const variantNodes = useModelGeometries(
-    model.variations.find(
-      (variation) =>
-        variation.legCut == currentLegStyle &&
-        variation.size == currentShortSize
-    )["parts"]
-  );
-
   const modelTassel = model.variations.find(
     (variation) => variation.hasTassels == hasTassels
+  );
+
+  const modelVariation = model.variations.find(
+    (variation) =>
+      variation.legCut == currentLegStyle && variation.size == currentShortSize
+  );
+
+  const variantNodes = useModelGeometries(
+    modelVariation ? modelVariation["parts"] : []
   );
 
   const tasselNodes = useModelGeometries(
@@ -39,12 +40,17 @@ function BoxingShortsModel({ model, ...props }) {
   }, [variantNodes]);
 
   return (
-    <ConfiguratorModel {...props} model={model.models}>
+    <ConfiguratorModel
+      {...props}
+      model={model.models}
+      transforms={modelVariation ? modelVariation.transforms : undefined}
+    >
       {variantNodes &&
         variantNodes.map((node) => (
           <ConfiguratorMesh
             key={node.id}
             node={node}
+            transforms={modelVariation ? modelVariation.transforms : undefined}
             // node={{
             //   ...node,
             //   ...(prevNodes.current
@@ -60,7 +66,11 @@ function BoxingShortsModel({ model, ...props }) {
 
       {tasselNodes &&
         tasselNodes.map((node) => (
-          <ConfiguratorMesh key={node.id} node={node}></ConfiguratorMesh>
+          <ConfiguratorMesh
+            key={node.id}
+            node={node}
+            transforms={modelVariation ? modelVariation.transforms : undefined}
+          ></ConfiguratorMesh>
         ))}
     </ConfiguratorModel>
   );

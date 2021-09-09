@@ -5,7 +5,7 @@ import { withSuspense } from "./withSuspense";
 
 const TEMP = "temp.jpg";
 
-function ConfiguratorMesh({ node }) {
+function ConfiguratorMesh({ node, transforms }) {
   const [hovered, setHovered] = useState(false);
 
   const [currentModelPart, setCurrentModelPart] = useCurrentModelPart();
@@ -41,6 +41,9 @@ function ConfiguratorMesh({ node }) {
       geometry={node.geometry}
       name={node.id}
       ref={meshRef}
+      scale={[1, 1, 1]}
+      position={[0, 0, 0]}
+      {...(transforms ? transforms(node) : {})}
     >
       <ConfiguratorMeshMaterial
         {...node.material}

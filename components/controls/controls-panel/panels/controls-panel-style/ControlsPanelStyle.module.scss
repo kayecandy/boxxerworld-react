@@ -15,4 +15,16 @@
       }
     }
   }
+
+  &__size {
+    cursor: pointer;
+
+    &_img {
+      width: 100px;
+      height: 111px;
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
 }

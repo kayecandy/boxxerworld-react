@@ -15,12 +15,12 @@ const CONTENT = {
     {
       id: "standard",
       title: "Standard",
-      img: "icons/size-standard.webp",
+      img: "url(icons/size-standard.png)",
     },
     {
       id: "retro",
       title: "Retro",
-      img: "icons/size-retro.webp",
+      img: "url(icons/size-retro.png)",
     },
   ],
 };
