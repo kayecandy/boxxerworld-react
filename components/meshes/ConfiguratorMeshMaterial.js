@@ -1,5 +1,6 @@
 import { useTexture } from "@react-three/drei";
 import { useCallback, useEffect, useRef } from "react";
+import { DoubleSide } from "three";
 
 const TEMP = "/temp.jpg";
 
@@ -43,6 +44,7 @@ export default function ConfiguratorMeshMaterial({
   return (
     <meshStandardMaterial
       ref={materialRef}
+      side={DoubleSide}
       {...textureMaps()}
       {...materials}
     ></meshStandardMaterial>
