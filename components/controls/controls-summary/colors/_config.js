@@ -22,6 +22,11 @@ const CONFIG = {
       name: "Reds",
       color: "rgb(183, 0, 0)",
     },
+    {
+      id: "prints",
+      name: "Prints",
+      color: "#000000",
+    },
   ],
   subcategories: [
     {
@@ -45,12 +50,8 @@ const CONFIG = {
       subcategories: ["satin"],
       material: {
         color: "#eeeeee",
-        normalScale: [-0.25, 0.25],
-        roughness: 0.6,
-        metalness: 0,
-        transparent: false,
-        emissive: "#000000",
-        emissiveIntensity: 1,
+        roughness: 0.55,
+        metalness: -0.3,
       },
       style: {
         backgroundColor: "#eeeeee",
@@ -63,13 +64,9 @@ const CONFIG = {
       categories: ["blacks"],
       subcategories: ["satin"],
       material: {
-        color: "#3e3e3e",
-        normalScale: [-0.25, 0.25],
-        roughness: 0.45,
-        metalness: 0.4,
-        transparent: false,
-        emissive: "#000000",
-        emissiveIntensity: 1,
+        color: "#111111",
+        roughness: 0.27,
+        metalness: 0.5,
       },
 
       style: {
@@ -84,12 +81,8 @@ const CONFIG = {
       subcategories: ["satin"],
       material: {
         color: "rgb(183, 0, 0)",
-        normalScale: [-0.25, 0.25],
-        roughness: 0.6,
-        metalness: 0,
-        transparent: false,
-        emissive: "#000000",
-        emissiveIntensity: 1,
+        roughness: 0.4,
+        metalness: -0.35,
       },
       style: {
         backgroundColor: "rgb(183, 0, 0)",
@@ -103,12 +96,9 @@ const CONFIG = {
       subcategories: ["satin"],
       material: {
         color: "#ffffff",
-        roughness: 0.6,
-        metalness: 0.1,
-        transparent: false,
+        roughness: 0.5,
+        metalness: -0.25,
         normalScale: [1.25, 1.75],
-        emissive: "#000000",
-        emissiveIntensity: 1,
 
         textures: {
           maps: {
@@ -130,7 +120,6 @@ const CONFIG = {
         color: "#3e3e3e",
         roughness: 0.5,
         metalness: 1.5,
-        transparent: false,
         normalScale: [2, 2],
         emissiveIntensity: 0.3,
 
@@ -154,7 +143,6 @@ const CONFIG = {
         color: "#e20f0f",
         roughness: 0.3,
         metalness: 0.1,
-        transparent: false,
 
         normalScale: [-0.8, -0.8],
         emissiveIntensity: 0.2,
@@ -172,6 +160,30 @@ const CONFIG = {
       style: {
         backgroundColor: "rgb(183, 0, 0)",
         backgroundImage: "url(materials/red-sequins.jpg)",
+      },
+    },
+    {
+      id: "baroque",
+      name: "Baroque (Blk Yellow Gld)",
+      categories: ["prints"],
+      subcategories: ["satin"],
+      material: {
+        color: "#fff",
+        roughness: 0.35,
+        metalness: 0.1,
+
+        textures: {
+          wrapS: RepeatWrapping,
+          wrapT: RepeatWrapping,
+          repeat: new Vector2(3, 3),
+          maps: {
+            map: "materials/baroque.jpg",
+          },
+        },
+      },
+      style: {
+        backgroundColor: "rgb(0, 0, 0)",
+        backgroundImage: "url(materials/baroque.jpg)",
       },
     },
   ],

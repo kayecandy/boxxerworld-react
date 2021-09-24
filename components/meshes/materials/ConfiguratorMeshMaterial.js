@@ -1,6 +1,8 @@
-import { useTexture } from "@react-three/drei";
+import { useCubeTexture, useTexture } from "@react-three/drei";
 import { useCallback, useEffect, useRef } from "react";
-import { DoubleSide } from "three";
+import { CubeTexture, DoubleSide } from "three";
+
+import { defaultTexture, defaultMaterial } from "../_config";
 
 const TEMP = "/temp.jpg";
 
@@ -14,14 +16,9 @@ export default function ConfiguratorMeshMaterial({
   const materialRef = useRef();
 
   const textureMaps = useCallback(() => {
-    if (!maps)
-      return {
-        emissiveMap: null,
-        normalMap: null,
-        map: null,
-      };
+    if (!maps) return defaultTexture;
 
-    let _textureMaps = {};
+    let _textureMaps = { ...defaultTexture };
     Object.keys(maps).map((mapKey, index) => {
       _textureMaps[mapKey] = _textures[index];
     });
@@ -44,7 +41,7 @@ export default function ConfiguratorMeshMaterial({
   return (
     <meshStandardMaterial
       ref={materialRef}
-      side={DoubleSide}
+      {...defaultMaterial}
       {...textureMaps()}
       {...materials}
     ></meshStandardMaterial>

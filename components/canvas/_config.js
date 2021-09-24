@@ -3,31 +3,31 @@ const CONFIG = {
     linear: true,
     flat: true,
     camera: {
-      fov: 26,
-      position: [-1.3, 0, 7.2],
+      fov: 5,
+      position: [-6.37546092557343, 2.1970893240496195e-15, 35.31024512625285],
     },
   },
   ambientLight: {
     color: 16777215,
     groundColor: 4473924,
-    intensity: 0.65,
+    intensity: 0.7,
   },
   directionalLights: [
     {
       color: 16777215,
-      intensity: 0.55,
+      intensity: 0.4,
       position: [0, 6, -200],
       castShadow: false,
     },
     {
       color: 16759931,
-      intensity: 0.4,
+      intensity: 0.22,
       position: [-150, 0, 200],
       castShadow: false,
     },
     {
       color: 10213119,
-      intensity: 0.4,
+      intensity: 0.35,
       position: [100, 0, 200],
     },
   ],

@@ -5,26 +5,32 @@ import { cndce_configurator } from "./Configurator.module.scss";
 import CurrentLegStyleContextProvider from "./context/CurrentLegStyleContext";
 import CurrentModelContextProvider from "./context/CurrentModelContext";
 import CurrentModelPartContextProvider from "./context/CurrentModelPartContext";
+import CurrentNameContextProvider from "./context/CurrentNameContext";
 import CurrentShortSizeContextProvider from "./context/CurrentShortSizeContext";
 import HasTasselsContextProvider from "./context/HasTasselsContext";
+import NamesContextProvider from "./context/NamesContext";
 
 export default function Configurator() {
   return (
-    <CurrentModelContextProvider>
-      <CurrentModelPartContextProvider>
-        <CurrentShortSizeContextProvider>
-          <CurrentLegStyleContextProvider>
-            <HasTasselsContextProvider>
-              <div className={`${cndce_configurator} loaded`}>
-                <Canvas></Canvas>
+    <NamesContextProvider>
+      <CurrentNameContextProvider>
+        <CurrentModelContextProvider>
+          <CurrentModelPartContextProvider>
+            <CurrentShortSizeContextProvider>
+              <CurrentLegStyleContextProvider>
+                <HasTasselsContextProvider>
+                  <div className={`${cndce_configurator} loaded`}>
+                    <Canvas></Canvas>
 
-                <ControlsSummary></ControlsSummary>
-                <ControlsPanel></ControlsPanel>
-              </div>
-            </HasTasselsContextProvider>
-          </CurrentLegStyleContextProvider>
-        </CurrentShortSizeContextProvider>
-      </CurrentModelPartContextProvider>
-    </CurrentModelContextProvider>
+                    <ControlsSummary></ControlsSummary>
+                    <ControlsPanel></ControlsPanel>
+                  </div>
+                </HasTasselsContextProvider>
+              </CurrentLegStyleContextProvider>
+            </CurrentShortSizeContextProvider>
+          </CurrentModelPartContextProvider>
+        </CurrentModelContextProvider>
+      </CurrentNameContextProvider>
+    </NamesContextProvider>
   );
 }

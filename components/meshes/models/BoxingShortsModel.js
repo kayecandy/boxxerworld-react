@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
-import { useCurrentLegStyle } from "../configurator/context/CurrentLegStyleContext";
-import { useCurrentShortSize } from "../configurator/context/CurrentShortSizeContext";
-import { useHasTassels } from "../configurator/context/HasTasselsContext";
-import ConfiguratorMesh from "./ConfiguratorMesh";
+import { useCurrentLegStyle } from "../../configurator/context/CurrentLegStyleContext";
+import { useCurrentShortSize } from "../../configurator/context/CurrentShortSizeContext";
+import { useHasTassels } from "../../configurator/context/HasTasselsContext";
+import ConfiguratorMesh from "../ConfiguratorMesh";
 import ConfiguratorModel from "./ConfiguratorModel";
-import { useModelGeometries } from "./useModelGeometries";
-import { withSuspense } from "./withSuspense";
+import { useModelGeometries } from "../useModelGeometries";
+import { withSuspense } from "../withSuspense";
 
 function BoxingShortsModel({ model, ...props }) {
   const [currentLegStyle] = useCurrentLegStyle();
@@ -51,16 +51,6 @@ function BoxingShortsModel({ model, ...props }) {
             key={node.id}
             node={node}
             transforms={modelVariation ? modelVariation.transforms : undefined}
-            // node={{
-            //   ...node,
-            //   ...(prevNodes.current
-            //     ? {
-            //         material: prevNodes.current.find(
-            //           (prevNode) => node.id == prevNode.id
-            //         )["material"],
-            //       }
-            //     : node.material),
-            // }}
           ></ConfiguratorMesh>
         ))}
 

@@ -1,12 +1,15 @@
 import { OrbitControls, useContextBridge } from "@react-three/drei";
 import { Canvas as CanvasR3F } from "@react-three/fiber";
+import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
 import { CurrentLegStyleContext } from "../configurator/context/CurrentLegStyleContext";
 import { useCurrentModel } from "../configurator/context/CurrentModelContext";
 import { CurrentModelPartContext } from "../configurator/context/CurrentModelPartContext";
+import { CurrentNameContext } from "../configurator/context/CurrentNameContext";
 import { CurrentShortSizeContext } from "../configurator/context/CurrentShortSizeContext";
 import { HasTasselsContext } from "../configurator/context/HasTasselsContext";
-import BoxingShortsModel from "../meshes/BoxingShortsModel";
+import { NamesContext } from "../configurator/context/NamesContext";
+import BoxingShortsModel from "../meshes/models/BoxingShortsModel";
 import styles from "./Canvas.module.scss";
 import _config from "./_config";
 
@@ -17,17 +20,26 @@ export default function Canvas({
   orbitControls = _config.orbitControls,
 }) {
   const canvasRef = useRef();
+  const controlRef = useRef();
   const [dimension, setDimension] = useState({});
   const [dpr, setDpr] = useState(1);
 
   const [currentModel] = useCurrentModel();
 
+  const router = useRouter();
+
   const ContextBridge = useContextBridge(
+    NamesContext,
+    CurrentNameContext,
     CurrentModelPartContext,
     CurrentLegStyleContext,
     CurrentShortSizeContext,
     HasTasselsContext
   );
+
+  useEffect(() => {
+    window.router = router;
+  }, [router]);
 
   useEffect(() => {
     function resize() {
@@ -46,6 +58,11 @@ export default function Canvas({
     resize();
   }, []);
 
+  useEffect(() => {
+    window.control = controlRef.current;
+    console.log(controlRef);
+  }, [controlRef]);
+
   return (
     <div
       ref={canvasRef}
@@ -63,7 +80,11 @@ export default function Canvas({
           ></directionalLight>
         ))}
         {/* Controls */}
-        <OrbitControls {...orbitControls}></OrbitControls>
+        <OrbitControls
+          makeDefault
+          ref={controlRef}
+          {...orbitControls}
+        ></OrbitControls>
 
         <ContextBridge>
           <BoxingShortsModel model={currentModel}></BoxingShortsModel>
