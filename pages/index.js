@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Configurator from "../components/configurator/Configurator";
 
-const mode = process.env.MODE;
+const mode = process.env ? process.env.MODE : false;
 
 export default function Home() {
   return (
