@@ -17,7 +17,6 @@ function ConfiguratorMesh({ node, transforms }) {
   const meshRef = useRef();
 
   useEffect(() => {
-    console.log(currentModelPart, node);
     if (currentModelPart && currentModelPart.id == node.id) {
       window.mesh = meshRef.current;
     }
