@@ -17,6 +17,7 @@ function ConfiguratorMesh({ node, transforms }) {
   const meshRef = useRef();
 
   useEffect(() => {
+    console.log(currentModelPart, node);
     if (currentModelPart && currentModelPart.id == node.id) {
       window.mesh = meshRef.current;
     }
@@ -47,6 +48,8 @@ function ConfiguratorMesh({ node, transforms }) {
         name={node.id}
         scale={[1, 1, 1]}
         position={[0, 0, 0]}
+        ref={meshRef}
+        {...node.meshProps}
         {...(transforms ? transforms(node) : {})}
       >
         <ConfiguratorMeshMaterial
@@ -57,33 +60,18 @@ function ConfiguratorMesh({ node, transforms }) {
 
       {node.hasTexture &&
         names.map((name, i) => (
-          <NameMesh
-            node={node}
-            transforms={transforms}
-            name={name}
+          <mesh
             key={i}
+            name={`texture_${node.id}`}
+            geometry={node.geometry}
+            scale={[1.007, 1.007, 1.007]}
             ref={meshRef}
-          ></NameMesh>
+            material={name.material}
+            {...(transforms ? transforms(node) : {})}
+          ></mesh>
         ))}
     </>
   );
 }
 
 export default withSuspense(ConfiguratorMesh);
-
-const NameMesh = React.forwardRef(function (
-  { name, transforms, node, ...props },
-  meshRef
-) {
-  return (
-    <mesh
-      name={`texture_${node.id}`}
-      geometry={node.geometry}
-      scale={[1.007, 1.007, 1.007]}
-      ref={meshRef}
-      material={name.material}
-      {...(transforms ? transforms(node) : {})}
-      {...props}
-    ></mesh>
-  );
-});

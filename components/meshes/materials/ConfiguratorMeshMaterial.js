@@ -1,8 +1,6 @@
-import { useCubeTexture, useTexture } from "@react-three/drei";
+import { useTexture } from "@react-three/drei";
 import { useCallback, useEffect, useRef } from "react";
-import { CubeTexture, DoubleSide } from "three";
-
-import { defaultTexture, defaultMaterial } from "../_config";
+import { defaultMaterial, defaultTexture } from "../_config";
 
 const TEMP = "/temp.jpg";
 

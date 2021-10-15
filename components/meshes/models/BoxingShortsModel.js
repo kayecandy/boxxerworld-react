@@ -8,15 +8,18 @@ import { useModelGeometries } from "../useModelGeometries";
 import { withSuspense } from "../withSuspense";
 
 function BoxingShortsModel({ model, ...props }) {
+  const { variations = [] } = model;
   const [currentLegStyle] = useCurrentLegStyle();
   const [currentShortSize] = useCurrentShortSize();
   const [hasTassels] = useHasTassels();
 
-  const modelTassel = model.variations.find(
-    (variation) => variation.hasTassels == hasTassels
+  const modelTassel = variations.find(
+    (variation) =>
+      variation.hasTassels == hasTassels &&
+      (variation.legCut ? variation.legCut == currentLegStyle : true)
   );
 
-  const modelVariation = model.variations.find(
+  const modelVariation = variations.find(
     (variation) =>
       variation.legCut == currentLegStyle && variation.size == currentShortSize
   );

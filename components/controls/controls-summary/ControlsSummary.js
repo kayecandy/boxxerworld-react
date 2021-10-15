@@ -2,7 +2,6 @@ import { Accordion } from "react-bootstrap";
 import { useCurrentModelPart } from "../../configurator/context/CurrentModelPartContext";
 import ControlsSummaryColors from "./colors/ControlsSummaryColors";
 import style from "./ControlsSummary.module.scss";
-import ControlsSummaryParts from "./model-parts/ControlsSummaryParts";
 
 export default function ControlsSummary() {
   const [currentModelPart] = useCurrentModelPart();

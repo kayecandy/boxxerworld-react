@@ -86,9 +86,11 @@ export default function Canvas({
           {...orbitControls}
         ></OrbitControls>
 
-        <ContextBridge>
-          <BoxingShortsModel model={currentModel}></BoxingShortsModel>
-        </ContextBridge>
+        {currentModel && (
+          <ContextBridge>
+            <BoxingShortsModel model={currentModel}></BoxingShortsModel>
+          </ContextBridge>
+        )}
       </CanvasR3F>
     </div>
   );

@@ -1,4 +1,5 @@
 import Canvas from "../canvas/Canvas";
+import ControlsModel from "../controls/controls-model/ControlsModel";
 import ControlsPanel from "../controls/controls-panel/ControlsPanel";
 import ControlsSummary from "../controls/controls-summary/ControlsSummary";
 import { cndce_configurator } from "./Configurator.module.scss";
@@ -22,6 +23,7 @@ export default function Configurator() {
                   <div className={`${cndce_configurator} loaded`}>
                     <Canvas></Canvas>
 
+                    <ControlsModel></ControlsModel>
                     <ControlsSummary></ControlsSummary>
                     <ControlsPanel></ControlsPanel>
                   </div>
