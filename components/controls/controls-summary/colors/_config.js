@@ -55,7 +55,7 @@ const CONFIG = {
       },
       style: {
         backgroundColor: "#eeeeee",
-        backgroundImage: "url(materials/white-satin.webp)",
+        backgroundImage: "url(/materials/white-satin.webp)",
       },
     },
     {
@@ -71,7 +71,7 @@ const CONFIG = {
 
       style: {
         backgroundColor: "#000000",
-        backgroundImage: "url(materials/black-satin.webp)",
+        backgroundImage: "url(/materials/black-satin.webp)",
       },
     },
     {
@@ -86,7 +86,7 @@ const CONFIG = {
       },
       style: {
         backgroundColor: "rgb(183, 0, 0)",
-        backgroundImage: "url(materials/red-satin.webp)",
+        backgroundImage: "url(/materials/red-satin.webp)",
       },
     },
     {
@@ -102,13 +102,13 @@ const CONFIG = {
 
         textures: {
           maps: {
-            normalMap: "materials/quilted_normal.jpg",
+            normalMap: "/materials/quilted_normal.jpg",
           },
         },
       },
       style: {
         backgroundColor: "#ffffff",
-        backgroundImage: "url(materials/white-quilted.jpg)",
+        backgroundImage: "url(/materials/white-quilted.jpg)",
       },
     },
     {
@@ -125,13 +125,13 @@ const CONFIG = {
 
         textures: {
           maps: {
-            normalMap: "materials/quilted_normal.jpg",
+            normalMap: "/materials/quilted_normal.jpg",
           },
         },
       },
       style: {
         backgroundColor: "#000000",
-        backgroundImage: "url(materials/black-quilted.jpg)",
+        backgroundImage: "url(/materials/black-quilted.jpg)",
       },
     },
     {
@@ -152,14 +152,14 @@ const CONFIG = {
           wrapT: RepeatWrapping,
           repeat: new Vector2(3, 3),
           maps: {
-            normalMap: "materials/sequins2_normal.jpg",
-            emissiveMap: "materials/sequins2_light.jpg",
+            normalMap: "/materials/sequins2_normal.jpg",
+            emissiveMap: "/materials/sequins2_light.jpg",
           },
         },
       },
       style: {
         backgroundColor: "rgb(183, 0, 0)",
-        backgroundImage: "url(materials/red-sequins.jpg)",
+        backgroundImage: "url(/materials/red-sequins.jpg)",
       },
     },
     {
@@ -177,13 +177,13 @@ const CONFIG = {
           wrapT: RepeatWrapping,
           repeat: new Vector2(3, 3),
           maps: {
-            map: "materials/baroque.jpg",
+            map: "/materials/baroque.jpg",
           },
         },
       },
       style: {
         backgroundColor: "rgb(0, 0, 0)",
-        backgroundImage: "url(materials/baroque.jpg)",
+        backgroundImage: "url(/materials/baroque.jpg)",
       },
     },
   ],
