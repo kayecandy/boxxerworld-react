@@ -44,7 +44,10 @@ const transformRetro = (node) => {
 };
 
 const CONTENT = {
-  preview: "/3d/boxing-shorts/side-stripe/preview.webp",
+  name: "Side Stripe BX",
+  subtitle: "Custom Fightwear Short",
+
+  preview: "url(/3d/boxing-shorts/side-stripe/preview.webp)",
   models: [
     {
       id: "waist",

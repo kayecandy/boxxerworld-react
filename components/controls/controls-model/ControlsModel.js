@@ -14,11 +14,29 @@ export default function ControlsModel() {
   const handleShow = () => setShow(true);
   const handleHide = () => setShow(false);
 
+  if (!currentModel) return <div></div>;
+
   return (
     <>
-      <Button className={style.cndce_controls_model} onClick={handleShow}>
-        Toggle Models
-      </Button>
+      <div className={style.cndce_controls_model}>
+        <div>
+          <a href="#" className={style.back_link}>
+            Back to custom shop
+          </a>
+        </div>
+        <div className="mb-2">
+          <h6 className={style.name}>{currentModel.name}</h6>&nbsp;
+          <span className={style.subtitle}>{currentModel.subtitle}</span>
+        </div>
+        <Button
+          className={style.menu_trigger}
+          onClick={handleShow}
+          style={{
+            backgroundImage: currentModel.preview,
+          }}
+        ></Button>
+      </div>
+
       <Offcanvas show={show} placement="start" onHide={handleHide}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title>Models</Offcanvas.Title>

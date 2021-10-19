@@ -1,7 +1,10 @@
 import { preload_draco } from "./_preload";
 
 const CONTENT = {
-  preview: "/3d/boxing-shorts/slick-bx/preview.webp",
+  name: "Slick BX",
+  subtitle: "Custom Fightwear Short",
+
+  preview: "url(/3d/boxing-shorts/slick-bx/preview.webp)",
   models: [
     {
       id: "body-fr",

@@ -2,4 +2,69 @@
   position: absolute;
   left: 1rem;
   top: 1rem;
+
+  .name,
+  .subtitle {
+    display: inline-block;
+    color: #63b20b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .name {
+  }
+
+  .subtitle {
+    font-size: 85%;
+  }
+
+  .back_link {
+    font-weight: 600;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #5e5e5e;
+    text-decoration: none;
+    font-size: 73%;
+    letter-spacing: 1px;
+  }
+
+  button.menu_trigger:global(.btn) {
+    position: relative;
+    padding: 0;
+    width: 6.5rem;
+    overflow: hidden;
+    border-radius: 0.5rem;
+    height: 5rem;
+    cursor: pointer;
+    background-size: auto 100%;
+
+    &:before {
+      content: "";
+      position: absolute;
+      z-index: 5;
+      background: inherit;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      filter: invert(0.81);
+    }
+
+    &:after {
+      content: ">";
+      width: 1.2rem;
+      height: 100%;
+      line-height: 5rem;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 10;
+      background-color: #202020;
+      transition: all 0.3s cubic-bezier(0.15, 0.24, 0.06, 1.48);
+    }
+
+    &:hover:after {
+      width: 1.4rem;
+    }
+  }
 }

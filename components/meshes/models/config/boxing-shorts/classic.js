@@ -2,7 +2,9 @@ import { preload_draco } from "./_preload";
 import { tasselMaterial } from "./_tasselMaterial";
 
 const CONTENT = {
-  preview: "/3d/boxing-shorts/classic/preview.webp",
+  name: "Classic BX",
+  subtitle: "Custom Fightwear Short",
+  preview: "url(/3d/boxing-shorts/classic/preview.webp)",
   models: [
     {
       id: "waist",
