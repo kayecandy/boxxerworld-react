@@ -1,3 +1,5 @@
+import { preload_draco } from "./_preload";
+
 const CONTENT = {
   preview: "/3d/boxing-shorts/slick-bx/preview.webp",
   models: [
@@ -129,5 +131,7 @@ const CONTENT = {
     },
   ],
 };
+
+preload_draco(CONTENT);
 
 export default CONTENT;

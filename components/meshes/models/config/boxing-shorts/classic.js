@@ -1,3 +1,4 @@
+import { preload_draco } from "./_preload";
 import { tasselMaterial } from "./_tasselMaterial";
 
 const CONTENT = {
@@ -150,4 +151,5 @@ const CONTENT = {
   ],
 };
 
+preload_draco(CONTENT);
 export default CONTENT;
