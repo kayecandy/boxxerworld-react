@@ -1,4 +1,4 @@
-import { preload_draco } from "./_preload";
+import { preload_draco } from "../_preload";
 import { tasselMaterial } from "./_tasselMaterial";
 
 const CONTENT = {
