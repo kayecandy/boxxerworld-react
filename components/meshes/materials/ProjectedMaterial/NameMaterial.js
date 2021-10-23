@@ -7,8 +7,8 @@ import {
 import ProjectedMaterial from "./ProjectedMaterial";
 
 export default function NameMaterial({
-  map = "./test.png",
-  normalMap = "./test-normal.png",
+  map = "/test.png",
+  normalMap = "/test-normal.png",
   name = {},
   texture = {
     repeat: { x: 5.5, y: 1 },

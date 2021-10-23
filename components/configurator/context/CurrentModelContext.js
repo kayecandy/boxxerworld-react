@@ -16,9 +16,9 @@ export default function CurrentModelContextProvider(props) {
 
       if (
         Object.keys(MODELS).includes(product) &&
-        Object.keys(MODELS[product]).includes(model)
+        Object.keys(MODELS[product].models).includes(model)
       ) {
-        setCurrentModel(MODELS[product][model]);
+        setCurrentModel(MODELS[product].models[model]);
       } else {
         router.push("/[product]/[model]", "/boxing-shorts/classic");
       }
