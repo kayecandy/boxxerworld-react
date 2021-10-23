@@ -8,6 +8,7 @@ import Link from "next/link";
 import style from "./ControlsModel.module.scss";
 
 import { MODELS } from "./_config";
+import { useRouter } from "next/router";
 
 export default function ControlsModel() {
   const [show, setShow] = useState(false);
@@ -15,6 +16,9 @@ export default function ControlsModel() {
 
   const handleShow = () => setShow(true);
   const handleHide = () => setShow(false);
+
+  const router = useRouter();
+  const { product } = router.query;
 
   if (!currentModel) return <div></div>;
 
@@ -31,7 +35,7 @@ export default function ControlsModel() {
           <span className={style.subtitle}>{currentModel.subtitle}</span>
         </div>
         <Button
-          className={style.menu_trigger}
+          className={`${style.menu_trigger} ${product}`}
           onClick={handleShow}
           style={{
             backgroundImage: currentModel.preview,
@@ -51,7 +55,7 @@ export default function ControlsModel() {
 
         <Offcanvas.Body>
           <h3 className={style.offcanvas_title}>Custom Fightwear</h3>
-          <Tabs>
+          <Tabs defaultActiveKey={product}>
             {Object.entries(MODELS).map(([productKey, product]) => (
               <Tab
                 key={productKey}
@@ -67,7 +71,9 @@ export default function ControlsModel() {
                         href="/[product]/[model]"
                         as={`/${productKey}/${modelKey}`}
                       >
-                        <Button className={`${style.model_btn} p-0`}>
+                        <Button
+                          className={`${style.model_btn} p-0 ${productKey}`}
+                        >
                           <div
                             className={`${style.model_btn__img}`}
                             style={{

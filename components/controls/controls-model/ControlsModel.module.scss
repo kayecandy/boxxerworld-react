@@ -38,6 +38,11 @@
     cursor: pointer;
     background-size: auto 100%;
 
+    &:global(.robes) {
+      background-size: auto 175%;
+      background-position: left center;
+    }
+
     &:before {
       content: "";
       position: absolute;
@@ -109,9 +114,18 @@
       color: inherit;
       border: 1px solid #ededed;
       width: 100%;
+      transition: all 0.3s ease-in-out;
 
       &:hover {
         background-color: white;
+        transform: scale(1.01);
+        box-shadow: 0 0 10px rgb(0 0 0 / 10%);
+      }
+    }
+
+    &:global(.robes) {
+      .model_btn__img {
+        background-size: auto 120%;
       }
     }
 
