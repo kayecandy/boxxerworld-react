@@ -1,4 +1,4 @@
-import { RepeatWrapping } from "three";
+import { RepeatWrapping, Vector2 } from "three";
 
 export const tasselMaterial = {
   textures: {
@@ -8,10 +8,12 @@ export const tasselMaterial = {
     },
     wrapS: RepeatWrapping,
     wrapT: RepeatWrapping,
+    repeat: new Vector2(1, 1),
     // offset: new Vector2(0, 0.09),
     flipY: false,
     flipX: false,
   },
   transparent: true,
   bumpScale: 0.15,
+  roughness: 0.8,
 };

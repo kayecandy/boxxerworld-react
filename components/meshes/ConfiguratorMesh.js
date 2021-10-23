@@ -66,8 +66,8 @@ function ConfiguratorMesh({ node, transforms }) {
           {...nodeMaterial}
           {...nodeBaseMaterial}
           textures={{
-            ...baseMaterialTextures,
             ...materialTextures,
+            ...baseMaterialTextures,
             maps: {
               ...materialMaps,
               ...baseMaterialMaps,
