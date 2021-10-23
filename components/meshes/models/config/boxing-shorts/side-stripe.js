@@ -48,6 +48,14 @@ const CONTENT = {
   subtitle: "Custom Fightwear Short",
 
   preview: "url(/3d/boxing-shorts/side-stripe/preview.webp)",
+  controls: {
+    styles: true,
+    name: true,
+    graphic: true,
+    flag: true,
+    tassels: true,
+    crystals: true,
+  },
   models: [
     {
       id: "waist",

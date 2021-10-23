@@ -5,6 +5,14 @@ const CONTENT = {
   name: "Classic BX",
   subtitle: "Custom Fightwear Short",
   preview: "url(/3d/boxing-shorts/classic/preview.webp)",
+  controls: {
+    styles: true,
+    name: true,
+    graphic: true,
+    flag: true,
+    tassels: true,
+    crystals: true,
+  },
   models: [
     {
       id: "waist",

@@ -5,6 +5,16 @@ const CONTENT = {
   subtitle: "Custom Fightwear Short",
 
   preview: "url(/3d/boxing-shorts/slick-bx/preview.webp)",
+
+  controls: {
+    styles: true,
+    name: true,
+    graphic: true,
+    flag: true,
+    tassels: true,
+    crystals: true,
+  },
+
   models: [
     {
       id: "body-fr",

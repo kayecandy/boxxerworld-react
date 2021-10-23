@@ -4,6 +4,14 @@ const CONTENT = {
   name: "Classic Robe",
   subtitle: "Custom Fightwear Robe",
   preview: "url(/3d/robes/classic/preview.webp)",
+  controls: {
+    styles: false,
+    name: true,
+    graphic: true,
+    flag: true,
+    tassels: false,
+    crystals: true,
+  },
   models: [
     {
       id: "main",
