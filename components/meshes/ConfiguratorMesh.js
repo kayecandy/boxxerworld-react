@@ -8,6 +8,17 @@ import { withSuspense } from "./withSuspense";
 const TEMP = "temp.jpg";
 
 function ConfiguratorMesh({ node, transforms }) {
+  const { material = {}, baseMaterial = {} } = node;
+
+  const {
+    textures: { maps: materialMaps, ...materialTextures } = {},
+    ...nodeMaterial
+  } = material;
+  const {
+    textures: { maps: baseMaterialMaps, ...baseMaterialTextures } = {},
+    ...nodeBaseMaterial
+  } = baseMaterial;
+
   const [hovered, setHovered] = useState(false);
 
   const [currentModelPart, setCurrentModelPart] = useCurrentModelPart();
@@ -52,7 +63,16 @@ function ConfiguratorMesh({ node, transforms }) {
         {...(transforms ? transforms(node) : {})}
       >
         <ConfiguratorMeshMaterial
-          {...node.material}
+          {...nodeMaterial}
+          {...nodeBaseMaterial}
+          textures={{
+            ...baseMaterialTextures,
+            ...materialTextures,
+            maps: {
+              ...materialMaps,
+              ...baseMaterialMaps,
+            },
+          }}
           opacity={hovered ? 0.93 : 1}
         ></ConfiguratorMeshMaterial>
       </mesh>

@@ -112,7 +112,7 @@ const CONTENT = {
           id: "tassels-side",
           name: "Tassels",
           url: "/3d/boxing-shorts/side-stripe/tassels.glb",
-          material: tasselMaterial,
+          baseMaterial: tasselMaterial,
           meshProps: {
             renderOrder: 1,
           },

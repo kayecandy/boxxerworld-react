@@ -82,7 +82,7 @@ const CONFIG = {
       material: {
         color: "rgb(183, 0, 0)",
         roughness: 0.4,
-        metalness: -0.35,
+        metalness: -0.1,
       },
       style: {
         backgroundColor: "rgb(183, 0, 0)",
