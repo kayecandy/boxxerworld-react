@@ -4,8 +4,15 @@ import { default as slick } from "/components/meshes/models/config/boxing-shorts
 
 export const MODELS = {
   "boxing-shorts": {
-    "side-stripe": side_stripe,
-    classic: classic,
-    slick: slick,
+    name: "Boxing Shorts",
+    models: {
+      classic,
+      side_stripe,
+      slick,
+    },
+  },
+  robes: {
+    name: "Robes",
+    models: {},
   },
 };
