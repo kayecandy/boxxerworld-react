@@ -101,6 +101,8 @@ const CONFIG = {
         normalScale: [1.25, 1.75],
 
         textures: {
+          wrapS: RepeatWrapping,
+          wrapT: RepeatWrapping,
           maps: {
             normalMap: "/materials/quilted_normal.jpg",
           },
@@ -124,6 +126,8 @@ const CONFIG = {
         emissiveIntensity: 0.3,
 
         textures: {
+          wrapS: RepeatWrapping,
+          wrapT: RepeatWrapping,
           maps: {
             normalMap: "/materials/quilted_normal.jpg",
           },
