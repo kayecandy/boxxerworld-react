@@ -6,7 +6,7 @@ import NameMaterial from "../materials/ProjectedMaterial/NameMaterial";
 import { useModelGeometries } from "../useModelGeometries";
 import { withSuspense } from "../withSuspense";
 
-function ConfiguratorModel({ model, transforms, children }) {
+function BaseModel({ model, transforms, children }) {
   const nodes = useModelGeometries(model);
   const modelRef = useRef();
   const { camera, controls } = useThree();
@@ -41,4 +41,4 @@ function ConfiguratorModel({ model, transforms, children }) {
   );
 }
 
-export default withSuspense(ConfiguratorModel);
+export default withSuspense(BaseModel);

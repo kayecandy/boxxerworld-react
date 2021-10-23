@@ -3,7 +3,7 @@ import { useCurrentLegStyle } from "../../configurator/context/CurrentLegStyleCo
 import { useCurrentShortSize } from "../../configurator/context/CurrentShortSizeContext";
 import { useHasTassels } from "../../configurator/context/HasTasselsContext";
 import ConfiguratorMesh from "../ConfiguratorMesh";
-import ConfiguratorModel from "./ConfiguratorModel";
+import BaseModel from "./BaseModel";
 import { useModelGeometries } from "../useModelGeometries";
 import { withSuspense } from "../withSuspense";
 
@@ -43,7 +43,7 @@ function BoxingShortsModel({ model, ...props }) {
   }, [variantNodes]);
 
   return (
-    <ConfiguratorModel
+    <BaseModel
       {...props}
       model={model.models}
       transforms={modelVariation ? modelVariation.transforms : undefined}
@@ -65,7 +65,7 @@ function BoxingShortsModel({ model, ...props }) {
             transforms={modelVariation ? modelVariation.transforms : undefined}
           ></ConfiguratorMesh>
         ))}
-    </ConfiguratorModel>
+    </BaseModel>
   );
 }
 
