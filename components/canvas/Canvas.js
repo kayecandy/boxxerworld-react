@@ -9,7 +9,7 @@ import { CurrentNameContext } from "../configurator/context/CurrentNameContext";
 import { CurrentShortSizeContext } from "../configurator/context/CurrentShortSizeContext";
 import { HasTasselsContext } from "../configurator/context/HasTasselsContext";
 import { NamesContext } from "../configurator/context/NamesContext";
-import BoxingShortsModel from "../meshes/models/BoxingShortsModel";
+import CurrentModel from "../meshes/models/CurrentModel";
 import styles from "./Canvas.module.scss";
 import _config from "./_config";
 
@@ -36,10 +36,6 @@ export default function Canvas({
     CurrentShortSizeContext,
     HasTasselsContext
   );
-
-  useEffect(() => {
-    window.router = router;
-  }, [router]);
 
   useEffect(() => {
     function resize() {
@@ -88,7 +84,7 @@ export default function Canvas({
 
         {currentModel && (
           <ContextBridge>
-            <BoxingShortsModel model={currentModel}></BoxingShortsModel>
+            <CurrentModel router={router} model={currentModel}></CurrentModel>
           </ContextBridge>
         )}
       </CanvasR3F>

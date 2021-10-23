@@ -8,10 +8,11 @@ export function preload_draco(modelConfig) {
     DRACO_URL
   );
 
-  modelConfig.variations.forEach((variation) => {
-    useGLTF.preload(
-      variation.parts.map((part) => part.url),
-      DRACO_URL
-    );
-  });
+  modelConfig.variations &&
+    modelConfig.variations.forEach((variation) => {
+      useGLTF.preload(
+        variation.parts.map((part) => part.url),
+        DRACO_URL
+      );
+    });
 }
