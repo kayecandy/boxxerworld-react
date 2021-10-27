@@ -58,7 +58,6 @@ function ConfiguratorMesh({ node, transforms }) {
         name={node.id}
         scale={[1, 1, 1]}
         position={[0, 0, 0]}
-        ref={meshRef}
         {...node.meshProps}
         {...(transforms ? transforms(node) : {})}
       >
@@ -86,6 +85,7 @@ function ConfiguratorMesh({ node, transforms }) {
             scale={[1.007, 1.007, 1.007]}
             ref={meshRef}
             material={name.material}
+            ref={meshRef}
             {...(transforms ? transforms(node) : {})}
           ></mesh>
         ))}

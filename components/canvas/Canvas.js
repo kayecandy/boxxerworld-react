@@ -2,6 +2,10 @@ import { OrbitControls, useContextBridge } from "@react-three/drei";
 import { Canvas as CanvasR3F } from "@react-three/fiber";
 import { useRouter } from "next/router";
 import { useEffect, useRef, useState } from "react";
+import {
+  CanvasSizeContext,
+  useCanvasSize,
+} from "../configurator/context/CanvasSizeContext";
 import { CurrentLegStyleContext } from "../configurator/context/CurrentLegStyleContext";
 import { useCurrentModel } from "../configurator/context/CurrentModelContext";
 import { CurrentModelPartContext } from "../configurator/context/CurrentModelPartContext";
@@ -11,6 +15,7 @@ import { HasTasselsContext } from "../configurator/context/HasTasselsContext";
 import { NamesContext } from "../configurator/context/NamesContext";
 import CurrentModel from "../meshes/models/CurrentModel";
 import styles from "./Canvas.module.scss";
+import NameCanvases from "./NameCanvases";
 import _config from "./_config";
 
 export default function Canvas({
@@ -21,7 +26,7 @@ export default function Canvas({
 }) {
   const canvasRef = useRef();
   const controlRef = useRef();
-  const [dimension, setDimension] = useState({});
+  const [dimension, setDimension] = useCanvasSize();
   const [dpr, setDpr] = useState(1);
 
   const [currentModel] = useCurrentModel();
@@ -29,6 +34,7 @@ export default function Canvas({
   const router = useRouter();
 
   const ContextBridge = useContextBridge(
+    CanvasSizeContext,
     NamesContext,
     CurrentNameContext,
     CurrentModelPartContext,
@@ -66,6 +72,7 @@ export default function Canvas({
       height={dimension.height}
       className={styles.cndce_canvas}
     >
+      <NameCanvases></NameCanvases>
       <CanvasR3F dpr={dpr} {...canvas} fallback={null}>
         {/* Lights */}
         <hemisphereLight {...ambientLight}></hemisphereLight>

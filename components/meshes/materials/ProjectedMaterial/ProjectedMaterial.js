@@ -1,19 +1,14 @@
-import { useTexture } from "@react-three/drei";
 import { useThree } from "@react-three/fiber";
-import React, { useCallback, useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { ShaderChunk } from "three";
 import uv_pars_vertex from "./shaders/uv_pars_vertex.glsl";
 import uv_vertex from "./shaders/uv_vertex.glsl";
 ShaderChunk;
+
 const TEMP = "/temp.jpg";
 
-function ProjectedMaterial(
-  { map, normalMap, texture, freeze = true, ...props },
-  materialRef
-) {
+function ProjectedMaterial({ freeze = true, ...props }, materialRef) {
   const { camera } = useThree();
-  const _texture = useTexture(map ? map : TEMP);
-  const _normalMap = useTexture(normalMap ? normalMap : TEMP);
 
   // Uniforms variable
   const uniforms = useRef();
@@ -30,25 +25,6 @@ function ProjectedMaterial(
       uniforms.current.viewMatrixCamera.value = getCameraMatrixWorldInverse();
     }
   }, [camera, freeze, uniforms]);
-
-  useEffect(() => {
-    Object.assign(_texture, texture);
-
-    _texture.needsUpdate = true;
-  }, [_texture]);
-
-  useEffect(() => {
-    Object.assign(_normalMap, texture);
-    _normalMap.needsUpdate = true;
-  }, [_normalMap]);
-
-  // TODO
-  useEffect(() => {
-    window.nameMaterial = materialRef.current;
-    if (materialRef.current) materialRef.current.needsUpdate = true;
-  }, [materialRef]);
-
-  console.log(materialRef.current ? materialRef.current.userData.uniforms : "");
 
   return (
     <meshStandardMaterial
@@ -91,8 +67,6 @@ function ProjectedMaterial(
           uv_vertex
         );
       }}
-      map={map ? _texture : null}
-      normalMap={normalMap ? _normalMap : null}
       needsUpdate={true}
       {...props}
     ></meshStandardMaterial>

@@ -8,7 +8,7 @@ export default function ControlsPanelNameEdit() {
   const [text, setText] = useState();
   const [printing, setPrinting] = useState();
   const [finish, setFinish] = useState();
-  const [freeze, setFreeze] = useState(true);
+  const [freeze, setFreeze] = useState(false);
 
   useEffect(() => {
     currentName.printing = printing;
@@ -24,6 +24,11 @@ export default function ControlsPanelNameEdit() {
     currentName.freeze = freeze;
     setCurrentName([currentName]);
   }, [freeze]);
+
+  useEffect(() => {
+    currentName.text = text;
+    setCurrentName([currentName]);
+  }, [text]);
 
   function onFreezeClick() {
     setFreeze(!freeze);
@@ -86,6 +91,7 @@ export default function ControlsPanelNameEdit() {
             type="text"
             placeholder="Enter your text"
             className="mb-3"
+            onChange={(e) => setText(e.target.value)}
           ></Form.Control>
 
           <div className="text-uppercase">Font</div>
