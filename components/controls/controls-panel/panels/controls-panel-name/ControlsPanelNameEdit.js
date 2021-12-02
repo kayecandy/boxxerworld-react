@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { Row, Col, Button, Form } from "react-bootstrap";
 import { useCurrentName } from "../../../../configurator/context/CurrentNameContext";
-import { NAMES_FINISH, NAMES_PRINTING } from "./_config";
+import { EDIT_MODE, NAMES_FINISH, NAMES_PRINTING } from "./_config";
 
 export default function ControlsPanelNameEdit() {
   const [[currentName], setCurrentName] = useCurrentName();
@@ -9,6 +9,7 @@ export default function ControlsPanelNameEdit() {
   const [printing, setPrinting] = useState();
   const [finish, setFinish] = useState();
   const [freeze, setFreeze] = useState(false);
+  const [editMode, setEditMode] = useState(EDIT_MODE.EDIT_3D);
 
   useEffect(() => {
     currentName.printing = printing;
@@ -30,8 +31,29 @@ export default function ControlsPanelNameEdit() {
     setCurrentName([currentName]);
   }, [text]);
 
+  useEffect(() => {
+    currentName.editMode = editMode;
+    setCurrentName([currentName]);
+  }, [editMode]);
+
   function onFreezeClick() {
     setFreeze(!freeze);
+  }
+  function onEditModeClick() {
+    let _editMode;
+
+    switch (editMode) {
+      case EDIT_MODE.EDIT_2D:
+        _editMode = EDIT_MODE.EDIT_3D;
+        break;
+
+      case EDIT_MODE.EDIT_3D:
+        _editMode = EDIT_MODE.EDIT_2D;
+        break;
+    }
+    setFreeze(false);
+
+    setEditMode(_editMode);
   }
 
   return (
@@ -99,6 +121,11 @@ export default function ControlsPanelNameEdit() {
 
         <Col>
           <Button onClick={onFreezeClick}>Toggle Freeze</Button>
+          <br />
+          <br />
+          <Button onClick={onEditModeClick}>
+            Edit {editMode == EDIT_MODE.EDIT_3D ? "Text" : "3D"}
+          </Button>
           <div>
             <small>This is a temporary feature to set the text material</small>
           </div>

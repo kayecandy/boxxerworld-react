@@ -26,3 +26,8 @@ export const NAMES_FINISH = {
   FLAT: "flat",
   PUFF: "puff",
 };
+
+export const EDIT_MODE = {
+  EDIT_2D: "2d",
+  EDIT_3D: "3d",
+};
