@@ -10,15 +10,11 @@ export default function NameCanvases() {
 
   // TODO: Handle multiple name canvasesd z-indices
 
+  useEffect(() => {
+    if (currentName && currentName.editMode) {
+      const { material } = currentName;
 
-  useEffect(()=>{
-
-
-    if(currentName && currentName.editMode){
-
-      const {material} = currentName;
-
-      switch(currentName.editMode){
+      switch (currentName.editMode) {
         case EDIT_MODE.EDIT_2D:
           material.opacity = 0;
           break;
@@ -26,15 +22,13 @@ export default function NameCanvases() {
           material.opacity = 1;
       }
 
-  
-  
       console.log(material);
     }
-
-  }, [currentName?.editMode])
+  }, [currentName?.editMode]);
 
   return (
     <div
+      id="name-canvases"
       style={{
         position: "absolute",
         zIndex: 1000,

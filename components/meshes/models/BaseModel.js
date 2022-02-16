@@ -1,7 +1,9 @@
 import { useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
+import { useGraphics } from "../../configurator/context/GraphicsContext";
 import { useNames } from "../../configurator/context/NamesContext";
 import ConfiguratorMesh from "../ConfiguratorMesh";
+import GraphicsMaterial from "../materials/ProjectedMaterial/GraphicsMaterial";
 import NameMaterial from "../materials/ProjectedMaterial/NameMaterial";
 import { useModelGeometries } from "../useModelGeometries";
 import { withSuspense } from "../withSuspense";
@@ -11,6 +13,7 @@ function BaseModel({ model, transforms, children }) {
   const modelRef = useRef();
   const { camera, controls } = useThree();
   const [names] = useNames();
+  const [graphics] = useGraphics();
 
   useEffect(() => {
     window.model = modelRef.current;
@@ -22,9 +25,18 @@ function BaseModel({ model, transforms, children }) {
   }, [camera]);
 
   return (
-    <group name="meshGroup" ref={modelRef} rotation={[0, 0.7, 0]} position={[0, -0.2, 0]}>
+    <group
+      name="meshGroup"
+      ref={modelRef}
+      rotation={[0, 0.7, 0]}
+      position={[0, -0.2, 0]}
+    >
       {names.map((name, i) => (
         <NameMaterial key={i} name={name}></NameMaterial>
+      ))}
+
+      {graphics.map((graphic, i) => (
+        <GraphicsMaterial key={i} graphic={graphic}></GraphicsMaterial>
       ))}
 
       {nodes &&

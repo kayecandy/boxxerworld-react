@@ -1,21 +1,4 @@
-import React, { useState } from "react";
-
 export const DEFAULT_NAME = {};
-
-class NameMaterial extends React.Component {
-  _text;
-  _setText;
-
-  constructor() {
-    [this._text, this._setText] = useState();
-  }
-
-  useText() {
-    return [_text, _setText];
-  }
-
-  render(props) {}
-}
 
 export const NAMES_PRINTING = {
   EMBROIDERY: "embroidery",
@@ -27,6 +10,10 @@ export const NAMES_FINISH = {
   PUFF: "puff",
 };
 
+/**
+ * @readonly
+ * @enum {string}
+ */
 export const EDIT_MODE = {
   EDIT_2D: "2d",
   EDIT_3D: "3d",

@@ -6,15 +6,18 @@ import {
   CanvasSizeContext,
   useCanvasSize,
 } from "../configurator/context/CanvasSizeContext";
+import { CurrentGraphicsContext } from "../configurator/context/CurrentGraphicsContext";
 import { CurrentLegStyleContext } from "../configurator/context/CurrentLegStyleContext";
 import { useCurrentModel } from "../configurator/context/CurrentModelContext";
 import { CurrentModelPartContext } from "../configurator/context/CurrentModelPartContext";
 import { CurrentNameContext } from "../configurator/context/CurrentNameContext";
 import { CurrentShortSizeContext } from "../configurator/context/CurrentShortSizeContext";
+import { GraphicsContext } from "../configurator/context/GraphicsContext";
 import { HasTasselsContext } from "../configurator/context/HasTasselsContext";
 import { NamesContext } from "../configurator/context/NamesContext";
 import CurrentModel from "../meshes/models/CurrentModel";
 import styles from "./Canvas.module.scss";
+import GraphicCanvases from "./GraphicsCanvases";
 import NameCanvases from "./NameCanvases";
 import _config from "./_config";
 
@@ -36,7 +39,9 @@ export default function Canvas({
   const ContextBridge = useContextBridge(
     CanvasSizeContext,
     NamesContext,
+    GraphicsContext,
     CurrentNameContext,
+    CurrentGraphicsContext,
     CurrentModelPartContext,
     CurrentLegStyleContext,
     CurrentShortSizeContext,
@@ -72,6 +77,7 @@ export default function Canvas({
       height={dimension.height}
       className={styles.cndce_canvas}
     >
+      <GraphicCanvases></GraphicCanvases>
       <NameCanvases></NameCanvases>
       <CanvasR3F dpr={dpr} {...canvas} fallback={null}>
         {/* Lights */}

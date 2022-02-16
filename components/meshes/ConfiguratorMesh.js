@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useCurrentModelPart } from "../configurator/context/CurrentModelPartContext";
+import { useGraphics } from "../configurator/context/GraphicsContext";
 import { useNames } from "../configurator/context/NamesContext";
 import ConfiguratorMeshMaterial from "./materials/ConfiguratorMeshMaterial";
 import ProjectedMaterial from "./materials/ProjectedMaterial/ProjectedMaterial";
@@ -24,6 +25,8 @@ function ConfiguratorMesh({ node, transforms }) {
   const [currentModelPart, setCurrentModelPart] = useCurrentModelPart();
 
   const [names] = useNames();
+
+  const [graphics] = useGraphics();
 
   const meshRef = useRef();
 
@@ -83,8 +86,21 @@ function ConfiguratorMesh({ node, transforms }) {
             name={`texture_${node.id}`}
             geometry={node.geometry}
             scale={[1.007, 1.007, 1.007]}
-            ref={meshRef}
+            // ref={meshRef}
             material={name.material}
+            {...(transforms ? transforms(node) : {})}
+          ></mesh>
+        ))}
+
+      {node.hasTexture &&
+        graphics.map((graphic, i) => (
+          <mesh
+            key={i}
+            name={`texture_${node.id}`}
+            geometry={node.geometry}
+            scale={[1.007, 1.007, 1.007]}
+            ref={meshRef}
+            material={graphic.material}
             {...(transforms ? transforms(node) : {})}
           ></mesh>
         ))}
