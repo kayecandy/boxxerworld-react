@@ -2,11 +2,18 @@ import { useRef, useEffect, useCallback } from "react";
 import { fabric } from "fabric";
 import { useCanvasSize } from "../configurator/context/CanvasSizeContext";
 import { useCurrentName } from "../configurator/context/CurrentNameContext";
+import { EDIT_MODE } from "../controls/controls-panel/panels/controls-panel-name/_config";
 
 export default function NameCanvas({ name }) {
   const { text = "Enter name...", material } = name;
   const [dimension] = useCanvasSize();
+  /**
+   * @type {import("react").MutableRefObject<HTMLCanvasElement>}
+   */
   const canvasRef = useRef();
+  /**
+   * @type {import("react").MutableRefObject<fabric.Canvas>}
+   */
   const fabricRef = useRef();
   const fabricTextRef = useRef();
 
@@ -21,9 +28,6 @@ export default function NameCanvas({ name }) {
     }
   };
 
-  const onNameMoving = (e) => {
-    // renderFabric();
-  };
 
   /**
    * Initialize FabricJS
@@ -31,10 +35,12 @@ export default function NameCanvas({ name }) {
   useEffect(() => {
     if (canvasRef.current && !fabricRef.current) {
       const fCanvas = new fabric.Canvas(canvasRef.current);
+      const { width, height } = dimension;
 
       const fText = new fabric.Text(text, {
-        left: 200,
-        top: 200,
+        left: width/2,
+        top: height/2,
+        textAlign: 'center'
       });
       fCanvas.add(fText);
 
@@ -44,18 +50,6 @@ export default function NameCanvas({ name }) {
       window.fabric = fCanvas;
     }
   }, [canvasRef]);
-
-  useEffect(() => {
-    if (fabricRef.current) {
-      fabricRef.current.on("object:moving", onNameMoving);
-    }
-  }, [fabricRef, material]);
-
-  useEffect(() => {
-    fabricRef.current.on("before:transform", (e) => {
-      console.log(e);
-    });
-  }, [fabricRef]);
 
   /**
    * Make sure the dimension of FabricJS canvas gets updated
@@ -83,6 +77,20 @@ export default function NameCanvas({ name }) {
       renderFabric();
     }
   }, [arrCurrentName]);
+
+  /**
+   * Update the selection control on edit mode update
+   */
+  useEffect(()=>{
+    if(currentName && currentName.editMode && fabricRef.current){
+      if(currentName.editMode == EDIT_MODE.EDIT_3D){
+        fabricRef.current.discardActiveObject();
+
+        renderFabric();
+      }
+    }
+
+  }, [currentName?.editMode, fabricRef])
 
   return <canvas ref={canvasRef}></canvas>;
 }

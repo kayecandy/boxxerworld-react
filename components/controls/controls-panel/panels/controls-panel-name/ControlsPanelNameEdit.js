@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
-import { Row, Col, Button, Form } from "react-bootstrap";
+import { Row, Col, Button, Form, ToggleButtonGroup, ToggleButton } from "react-bootstrap";
 import { useCurrentName } from "../../../../configurator/context/CurrentNameContext";
 import { EDIT_MODE, NAMES_FINISH, NAMES_PRINTING } from "./_config";
 
@@ -9,7 +9,9 @@ export default function ControlsPanelNameEdit() {
   const [printing, setPrinting] = useState();
   const [finish, setFinish] = useState();
   const [freeze, setFreeze] = useState(false);
-  const [editMode, setEditMode] = useState(EDIT_MODE.EDIT_3D);
+  const [editMode, setEditMode] = useState(EDIT_MODE.EDIT_2D);
+
+  const {material} = currentName;
 
   useEffect(() => {
     currentName.printing = printing;
@@ -36,24 +38,15 @@ export default function ControlsPanelNameEdit() {
     setCurrentName([currentName]);
   }, [editMode]);
 
-  function onFreezeClick() {
-    setFreeze(!freeze);
-  }
-  function onEditModeClick() {
-    let _editMode;
 
-    switch (editMode) {
-      case EDIT_MODE.EDIT_2D:
-        _editMode = EDIT_MODE.EDIT_3D;
-        break;
-
-      case EDIT_MODE.EDIT_3D:
-        _editMode = EDIT_MODE.EDIT_2D;
-        break;
-    }
+  function onEditModeChange(buttonValue){
+    setEditMode(buttonValue);
     setFreeze(false);
+  }
 
-    setEditMode(_editMode);
+  function onApplyClick(){
+    setFreeze(true);
+    setEditMode(EDIT_MODE.EDIT_3D);
   }
 
   return (
@@ -120,12 +113,19 @@ export default function ControlsPanelNameEdit() {
         </Col>
 
         <Col>
-          <Button onClick={onFreezeClick}>Toggle Freeze</Button>
-          <br />
-          <br />
-          <Button onClick={onEditModeClick}>
-            Edit {editMode == EDIT_MODE.EDIT_3D ? "Text" : "3D"}
-          </Button>
+
+          <h6 className="text-uppercase">Edit Text Position</h6>
+
+          <ToggleButtonGroup name="test" type="radio" value={editMode} onChange={onEditModeChange}>
+            <ToggleButton value={EDIT_MODE.EDIT_3D} id="test1">Edit 3D</ToggleButton>
+            <ToggleButton value={EDIT_MODE.EDIT_2D} id="test2">Edit Text</ToggleButton>
+          </ToggleButtonGroup>
+
+            <br></br><br></br>
+
+          <Button onClick={onApplyClick}>Apply Position</Button>
+
+       
           <div>
             <small>This is a temporary feature to set the text material</small>
           </div>

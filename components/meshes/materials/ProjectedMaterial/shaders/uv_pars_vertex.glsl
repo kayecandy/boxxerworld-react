@@ -5,9 +5,9 @@
     uniform mat4 meshMatrix;
     uniform vec3 projPosition;
 
-
+    varying vec3 vNormal2;
     varying vec4 vWorldPosition;
-    varying vec4 vTexCoords;
+    vec4 vTexCoords;
 
 	#ifdef UVS_VERTEX_ONLY
 		vec2 vUv;

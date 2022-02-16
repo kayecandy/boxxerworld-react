@@ -22,7 +22,7 @@ function BaseModel({ model, transforms, children }) {
   }, [camera]);
 
   return (
-    <group ref={modelRef} rotation={[0, 0.7, 0]} position={[0, -0.2, 0]}>
+    <group name="meshGroup" ref={modelRef} rotation={[0, 0.7, 0]} position={[0, -0.2, 0]}>
       {names.map((name, i) => (
         <NameMaterial key={i} name={name}></NameMaterial>
       ))}

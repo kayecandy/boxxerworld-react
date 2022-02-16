@@ -85,7 +85,6 @@ function ConfiguratorMesh({ node, transforms }) {
             scale={[1.007, 1.007, 1.007]}
             ref={meshRef}
             material={name.material}
-            ref={meshRef}
             {...(transforms ? transforms(node) : {})}
           ></mesh>
         ))}
