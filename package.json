@@ -16,6 +16,7 @@
     "fabric": "^4.6.0",
     "glslify-loader": "^2.0.0",
     "next": "^11.0.0",
+    "normalmap-online": "github:kayecandy/NormalMap-Online",
     "raw-loader": "^4.0.2",
     "react": "17.0.2",
     "react-bootstrap": "^2.0.0-beta.6",

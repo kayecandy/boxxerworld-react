@@ -50,6 +50,12 @@ export const useFabricCanvas = ({ fabricObject, contextObject }) => {
     if (canvasRef.current && !fabricRef.current) {
       const fCanvas = new fabric.Canvas(canvasRef.current);
 
+      fCanvas.setBackgroundColor(
+        "transparent",
+        fCanvas.renderAll.bind(fCanvas)
+      );
+      window.fCanvas = fCanvas;
+
       fabricRef.current = fCanvas;
       fabricObject.canvas = canvasRef.current;
     }

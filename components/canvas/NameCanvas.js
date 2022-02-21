@@ -35,6 +35,9 @@ export default function NameCanvas({ name }) {
         originX: "center",
         originY: "center",
         textAlign: "center",
+        fill: "red",
+        fontFamily: "Arial Black, Arial",
+        fontWeight: "900",
       });
 
       fabricRef.current.add(fText);

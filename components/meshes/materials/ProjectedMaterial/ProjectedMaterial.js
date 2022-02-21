@@ -1,26 +1,26 @@
-import React, {
-  useCallback,
-  useEffect,
-  useRef,
-} from 'react';
+import React, { useCallback, useEffect, useRef } from "react";
 
-import { useThree } from '@react-three/fiber';
+import { useThree } from "@react-three/fiber";
 
-import output_fragment from './shaders/output_fragment.glsl';
-import uv_pars_fragment from './shaders/uv_pars_fragment.glsl';
-import uv_pars_vertex from './shaders/uv_pars_vertex.glsl';
-import uv_vertex from './shaders/uv_vertex.glsl';
+import output_fragment from "./shaders/output_fragment.glsl";
+import uv_pars_fragment from "./shaders/uv_pars_fragment.glsl";
+import uv_pars_vertex from "./shaders/uv_pars_vertex.glsl";
+import uv_vertex from "./shaders/uv_vertex.glsl";
+import { MeshPhongMaterial } from "three";
 
 const TEMP = "/temp.jpg";
 
+/**
+ * @type {import("react").ForwardRefRenderFunction<MeshPhongMaterial,{freeze:boolean} & import("@react-three/fiber").MeshPhongMaterialProps>}
+ *
+ */
 function ProjectedMaterial({ freeze = true, ...props }, materialRef) {
   const { camera, scene } = useThree();
-  const meshGroup = scene.getObjectByName('meshGroup');
-
+  const meshGroup = scene.getObjectByName("meshGroup");
 
   // Uniforms variable
   const uniforms = useRef();
-  
+
   const getCameraMatrixWorldInverse = useCallback(() => {
     if (freeze) {
       return camera.matrixWorldInverse.clone();
@@ -29,11 +29,11 @@ function ProjectedMaterial({ freeze = true, ...props }, materialRef) {
     return camera.matrixWorldInverse;
   }, [freeze, camera]);
 
-  const getCameraPosition = useCallback(()=>{
+  const getCameraPosition = useCallback(() => {
     return freeze ? camera.position.clone() : camera.position;
   }, [freeze, camera]);
 
-  const getMeshMatrix = useCallback(()=>{
+  const getMeshMatrix = useCallback(() => {
     meshGroup.updateMatrixWorld();
 
     return freeze ? meshGroup.matrixWorld.clone() : meshGroup.matrixWorld;
@@ -44,7 +44,6 @@ function ProjectedMaterial({ freeze = true, ...props }, materialRef) {
       uniforms.current.viewMatrixCamera.value = getCameraMatrixWorldInverse();
       uniforms.current.projPosition.value = getCameraPosition();
       uniforms.current.meshMatrix.value = getMeshMatrix();
-
     }
   }, [camera, freeze, uniforms, meshGroup]);
 
@@ -53,14 +52,12 @@ function ProjectedMaterial({ freeze = true, ...props }, materialRef) {
   window.scene = scene;
 
   return (
-    <meshStandardMaterial
+    <meshPhongMaterial
       ref={materialRef}
       onBeforeCompile={(shader) => {
         if (uniforms.current) {
           shader.uniforms = uniforms.current;
         } else {
-
-
           camera.updateProjectionMatrix();
           camera.updateMatrixWorld();
           camera.updateWorldMatrix();
@@ -73,16 +70,15 @@ function ProjectedMaterial({ freeze = true, ...props }, materialRef) {
             },
             projectionMatrixCamera: {
               type: "m4",
-              value: camera.projectionMatrix
-              ,
+              value: camera.projectionMatrix,
             },
             modelMatrixCamera: { type: "mat4", value: camera.matrixWorld },
             projPosition: { type: "v3", value: getCameraPosition() },
             meshMatrix: {
-              type: "mat4", value: getMeshMatrix()
+              type: "mat4",
+              value: getMeshMatrix(),
             },
           };
-
 
           uniforms.current = _uniforms;
           shader.uniforms = _uniforms;
@@ -102,23 +98,22 @@ function ProjectedMaterial({ freeze = true, ...props }, materialRef) {
         );
 
         shader.fragmentShader = shader.fragmentShader.replace(
-          '#include <uv_pars_fragment>', 
+          "#include <uv_pars_fragment>",
           uv_pars_fragment
         );
 
         shader.fragmentShader = shader.fragmentShader.replace(
-          '#include <output_fragment>', 
+          "#include <output_fragment>",
           output_fragment
         );
 
         // shader.vertexShader = shader.vertexShader.concat("\nvNormal = mat3(meshMatrix) * normal;")
 
         console.log(shader);
-
       }}
       needsUpdate={true}
       {...props}
-    ></meshStandardMaterial>
+    ></meshPhongMaterial>
   );
 }
 
