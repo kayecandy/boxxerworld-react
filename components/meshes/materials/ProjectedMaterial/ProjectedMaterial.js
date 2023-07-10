@@ -11,7 +11,7 @@ import { MeshPhongMaterial } from "three";
 const TEMP = "/temp.jpg";
 
 /**
- * @type {import("react").ForwardRefRenderFunction<MeshPhongMaterial,{freeze:boolean} & import("@react-three/fiber").MeshPhongMaterialProps>}
+ * @type {import("react").ForwardRefRenderFunction<MeshPhongMaterial,{freeze:boolean} & import("@react-three/fiber").MeshStandardMaterialProps>}
  *
  */
 function ProjectedMaterial({ freeze = true, ...props }, materialRef) {
@@ -52,7 +52,7 @@ function ProjectedMaterial({ freeze = true, ...props }, materialRef) {
   window.scene = scene;
 
   return (
-    <meshPhongMaterial
+    <meshStandardMaterial
       ref={materialRef}
       onBeforeCompile={(shader) => {
         if (uniforms.current) {
@@ -103,17 +103,16 @@ function ProjectedMaterial({ freeze = true, ...props }, materialRef) {
         );
 
         shader.fragmentShader = shader.fragmentShader.replace(
-          "#include <output_fragment>",
+          "#include <opaque_fragment>",
           output_fragment
         );
 
         // shader.vertexShader = shader.vertexShader.concat("\nvNormal = mat3(meshMatrix) * normal;")
 
-        console.log(shader);
       }}
       needsUpdate={true}
       {...props}
-    ></meshPhongMaterial>
+    ></meshStandardMaterial>
   );
 }
 

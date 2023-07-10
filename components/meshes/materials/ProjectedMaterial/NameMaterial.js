@@ -41,6 +41,8 @@ export default function NameMaterial({ name = {}, ...props }) {
     if (currentName == name) {
       setCurrentName([name]);
     }
+
+    window.nameMaterial = materialRef.current;
   }, [materialRef]);
 
   useEffect(() => {
@@ -50,13 +52,21 @@ export default function NameMaterial({ name = {}, ...props }) {
 
     if (canvas) {
       const t = normalMapGenerator.current.generateFromImage(canvas, {
-        strength: 1,
+        strength: 0.5,
         blur: 7,
-        level: 5,
+        level: 1,
       });
       setNormalMap(t);
 
       // console.log(t.toDataURL());
+
+      // var image = new Image();
+      //   image.src = t.toDataURL();
+
+      //   var w = window.open("");
+      //   if(w){
+      //     w.document.write(image.outerHTML);
+      //   }
     }
   }, [canvas, currentNameWrapper]);
 
@@ -64,9 +74,11 @@ export default function NameMaterial({ name = {}, ...props }) {
     <ProjectedMaterial
       ref={materialRef}
       transparent={true}
-      shininess={1}
-      reflectivity={0.5}
-      displacementScale={10}
+      roughness={0}
+      // shininess={1}
+      // reflectivity={0.5}
+      // displacementScale={10}
+      
       normalScale={
         isEmbroidery() && finish == NAMES_FINISH.PUFF ? [30, 30] : [1.5, 1.5]
       }

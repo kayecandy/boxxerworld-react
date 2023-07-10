@@ -11,7 +11,7 @@ export default function NameCanvases() {
   // TODO: Handle multiple name canvasesd z-indices
 
   useEffect(() => {
-    if (currentName && currentName.editMode) {
+    if (currentName && currentName.editMode && currentName.material) {
       const { material } = currentName;
 
       switch (currentName.editMode) {

@@ -1,6 +1,11 @@
 import * as THREE from "three";
 import { MeshStandardMaterial } from "three";
 
+/**
+ * For reference of original projection mapping shader code
+ * 
+ * THIS ISN'T BEING USED
+ */
 export default class ProjectedMaterial extends MeshStandardMaterial {
   constructor({ camera, texture, color = 0xffffff, ...options } = {}) {
     if (!texture || !texture.isTexture) {
