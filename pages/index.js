@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>{mode == "dev" ? "[REACT]" : ""}Boxxerworld Configurator</title>
+        <title>{`${mode == "dev" ? "[REACT]" : ""}Boxxerworld Configurator`}</title>
         <link
           rel="icon"
           type="image/x-icon"

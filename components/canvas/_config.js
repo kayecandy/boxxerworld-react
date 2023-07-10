@@ -10,7 +10,7 @@ const CONFIG = {
   ambientLight: {
     color: 16777215,
     groundColor: 4473924,
-    intensity: 0.7,
+    intensity: 0.75,
   },
   directionalLights: [
     {
@@ -21,8 +21,8 @@ const CONFIG = {
     },
     {
       color: 16759931,
-      intensity: 0.22,
-      position: [-150, 0, 200],
+      intensity: 0.2,
+      position: [-100, 0, 200],
       castShadow: false,
     },
     {
@@ -30,6 +30,12 @@ const CONFIG = {
       intensity: 0.35,
       position: [100, 0, 200],
     },
+    {
+      color: 16777215,
+      intensity: 0.1,
+      position: [0, -4, 200],
+      castShadow: false,
+    }
   ],
   orbitControls: {
     minPolarAngle: Math.PI / 3,
