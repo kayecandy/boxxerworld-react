@@ -16,6 +16,5 @@ module.exports = {
 
     return config;
   },
-  transpilePackages: ["three"],
   output: 'export'
 };
