@@ -17,5 +17,5 @@ module.exports = {
     return config;
   },
   output: 'export',
-  basePath: '/boxxerworld-react'
+  basePath: process.env.NEXT_PUBLIC_BASE_PATH
 };

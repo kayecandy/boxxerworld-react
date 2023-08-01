@@ -2,12 +2,12 @@ const CONTENT = {
   legCuts: [
     {
       id: "side-slit",
-      img: "url(/icons/leg_cut-side_slit.png)",
+      img: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/leg_cut-side_slit.png)`,
       title: "Side Slit",
     },
     {
       id: "curve",
-      img: "url(/icons/leg_cut-curve_leg.png)",
+      img: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/leg_cut-curve_leg.png)`,
       title: "Curve Leg",
     },
   ],
@@ -15,12 +15,12 @@ const CONTENT = {
     {
       id: "standard",
       title: "Standard",
-      img: "url(/icons/size-standard.png)",
+      img: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/size-standard.png)`,
     },
     {
       id: "retro",
       title: "Retro",
-      img: "url(/icons/size-retro.png)",
+      img: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/size-retro.png)`,
     },
   ],
 };
