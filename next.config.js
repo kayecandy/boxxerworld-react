@@ -16,5 +16,6 @@ module.exports = {
 
     return config;
   },
-  output: 'export'
+  output: 'export',
+  basePath: '/boxxerworld-react'
 };
