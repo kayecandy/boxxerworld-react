@@ -4,7 +4,7 @@ const CONTENT = {
   name: "Slick BX",
   subtitle: "Custom Fightwear Short",
 
-  preview: "url(/3d/boxing-shorts/slick-bx/preview.webp)",
+  preview: "url(https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/preview.webp)",
 
   controls: {
     styles: true,
@@ -19,25 +19,25 @@ const CONTENT = {
     {
       id: "body-fr",
       name: "Center Panel",
-      url: "/3d/boxing-shorts/slick-bx/body-fr.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/body-fr.glb",
       hasTexture: true,
     },
     {
       id: "back-top",
       name: "Small Panel",
-      url: "/3d/boxing-shorts/slick-bx/back-top.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/back-top.glb",
       hasTexture: true,
     },
     {
       id: "garter",
       name: "Waistband",
-      url: "/3d/boxing-shorts/slick-bx/garter.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/garter.glb",
       hasTexture: true,
     },
     {
       id: "stitching",
       name: "Trim",
-      url: "/3d/boxing-shorts/slick-bx/stitching.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/stitching.glb",
     },
   ],
   variations: [
@@ -48,13 +48,13 @@ const CONTENT = {
         {
           id: "back-bottom",
           name: "Large Panel",
-          url: "/3d/boxing-shorts/slick-bx/back-bottom_side-slit.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/back-bottom_side-slit.glb",
           hasTexture: true,
         },
         {
           id: "stitching-bottom",
           name: "Leg Trim",
-          url: "/3d/boxing-shorts/slick-bx/stitching-bottom_side-slit.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/stitching-bottom_side-slit.glb",
         },
       ],
     },
@@ -65,14 +65,14 @@ const CONTENT = {
         {
           id: "back-bottom",
           name: "Large Panel",
-          url: "/3d/boxing-shorts/slick-bx/back-bottom_curve.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/back-bottom_curve.glb",
           hasTexture: true,
         },
 
         {
           id: "stitching-bottom",
           name: "Leg Trim",
-          url: "/3d/boxing-shorts/slick-bx/stitching-bottom_curve.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/stitching-bottom_curve.glb",
         },
       ],
     },
@@ -83,13 +83,13 @@ const CONTENT = {
         {
           id: "back-bottom",
           name: "Large Panel",
-          url: "/3d/boxing-shorts/slick-bx/back-bottom_side-slit.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/back-bottom_side-slit.glb",
           hasTexture: true,
         },
         {
           id: "stitching-bottom",
           name: "Leg Trim",
-          url: "/3d/boxing-shorts/slick-bx/stitching-bottom_side-slit.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/stitching-bottom_side-slit.glb",
         },
       ],
       transforms: (node) => {
@@ -111,13 +111,13 @@ const CONTENT = {
         {
           id: "back-bottom",
           name: "Large Panel",
-          url: "/3d/boxing-shorts/slick-bx/back-bottom_curve.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/back-bottom_curve.glb",
           hasTexture: true,
         },
         {
           id: "stitching-bottom",
           name: "Leg Trim",
-          url: "/3d/boxing-shorts/slick-bx/stitching-bottom_curve.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/stitching-bottom_curve.glb",
         },
       ],
       transforms: (node) => {
@@ -138,7 +138,7 @@ const CONTENT = {
         {
           id: "tassels",
           name: "Tassels",
-          url: "/3d/boxing-shorts/slick-bx/tassels.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/slick-bx/tassels.glb",
         },
       ],
     },

@@ -5,13 +5,13 @@ const partsSideSlit = [
   {
     id: "stripe",
     name: "Stripe Material",
-    url: "/3d/boxing-shorts/side-stripe/stripe_side-slit.glb",
+    url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/side-stripe/stripe_side-slit.glb",
     hasTexture: true,
   },
   {
     id: "stitching-bottom",
     name: "Leg Trim",
-    url: "/3d/boxing-shorts/side-stripe/stitching-bottom_side-slit.glb",
+    url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/side-stripe/stitching-bottom_side-slit.glb",
     hasTexture: true,
   },
 ];
@@ -20,13 +20,13 @@ const partsCurve = [
   {
     id: "stripe",
     name: "Stripe Material",
-    url: "/3d/boxing-shorts/side-stripe/stripe_curve.glb",
+    url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/side-stripe/stripe_curve.glb",
     hasTexture: true,
   },
   {
     id: "stitching-bottom",
     name: "Leg Trim",
-    url: "/3d/boxing-shorts/side-stripe/stitching-bottom_curve.glb",
+    url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/side-stripe/stitching-bottom_curve.glb",
     hasTexture: true,
   },
 ];
@@ -47,7 +47,7 @@ const CONTENT = {
   name: "Side Stripe BX",
   subtitle: "Custom Fightwear Short",
 
-  preview: "url(/3d/boxing-shorts/side-stripe/preview.webp)",
+  preview: "url(https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/side-stripe/preview.webp)",
   controls: {
     styles: true,
     name: true,
@@ -60,25 +60,25 @@ const CONTENT = {
     {
       id: "waist",
       name: "Waistband",
-      url: "/3d/boxing-shorts/waistband/waist.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/waistband/waist.glb",
       hasTexture: true,
     },
     {
       id: "waist-logo",
       name: "Waistband Logo",
-      url: "/3d/boxing-shorts/waistband/waist-logo.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/waistband/waist-logo.glb",
       hasTexture: true,
     },
     {
       id: "body",
       name: "Main Colour",
-      url: "/3d/boxing-shorts/side-stripe/body.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/side-stripe/body.glb",
       hasTexture: true,
     },
     {
       id: "stitching",
       name: "Vertical Trim",
-      url: "/3d/boxing-shorts/side-stripe/stitching.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/side-stripe/stitching.glb",
       hasTexture: true,
     },
   ],
@@ -111,7 +111,7 @@ const CONTENT = {
         {
           id: "tassels-side",
           name: "Tassels",
-          url: "/3d/boxing-shorts/side-stripe/tassels.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/side-stripe/tassels.glb",
           baseMaterial: tasselMaterial,
           meshProps: {
             renderOrder: 1,

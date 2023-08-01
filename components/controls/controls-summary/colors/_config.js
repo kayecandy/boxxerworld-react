@@ -97,7 +97,7 @@ const CONFIG = {
       },
       style: {
         backgroundColor: "#eeeeee",
-        backgroundImage: "url(/materials/white-satin.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/white-satin.webp)",
       },
     },
     {
@@ -113,7 +113,7 @@ const CONFIG = {
 
       style: {
         backgroundColor: "#000000",
-        backgroundImage: "url(/materials/black-satin.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/black-satin.webp)",
       },
     },
     {
@@ -129,7 +129,7 @@ const CONFIG = {
 
       style: {
         backgroundColor: "#CCAC00",
-        backgroundImage: "url(/materials/gold-true-satin.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/gold-true-satin.webp)",
       },
     },
     {
@@ -144,7 +144,7 @@ const CONFIG = {
       },
       style: {
         backgroundColor: "rgb(183, 0, 0)",
-        backgroundImage: "url(/materials/red-satin.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/red-satin.webp)",
       },
     },
     {
@@ -173,7 +173,7 @@ const CONFIG = {
       },
       style: {
         backgroundColor: "#344ca5",
-        backgroundImage: "url(/materials/blue-satin.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/blue-satin.webp)",
       },
     },
     {
@@ -188,7 +188,7 @@ const CONFIG = {
       },
       style: {
         backgroundColor: "#3eb240",
-        backgroundImage: "url(/materials/irish-green-satin.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/irish-green-satin.webp)",
       },
     },
     {
@@ -217,7 +217,7 @@ const CONFIG = {
       },
       style: {
         backgroundColor: "#ff4579",
-        backgroundImage: "url(/materials/pink-satin.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/pink-satin.webp)",
       },
     },
     {
@@ -232,7 +232,7 @@ const CONFIG = {
       },
       style: {
         backgroundColor: "#b40090",
-        backgroundImage: "url(/materials/purple-light-satin.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/purple-light-satin.webp)",
       },
     },
     {
@@ -250,13 +250,13 @@ const CONFIG = {
           wrapT: RepeatWrapping,
           repeat: new Vector2(0.5, 0.5),
           maps: {
-            map: "/materials/leopard-high-shine.webp",
+            map: "https://kayecandy.github.io/cdn/boxxerworld/materials/leopard-high-shine.webp",
           },
         },
       },
       style: {
         backgroundColor: "#434124",
-        backgroundImage: "url(/materials/leopard-high-shine.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/leopard-high-shine.webp)",
       },
     },
     {
@@ -274,13 +274,13 @@ const CONFIG = {
           wrapS: RepeatWrapping,
           wrapT: RepeatWrapping,
           maps: {
-            normalMap: "/materials/quilted_normal.jpg",
+            normalMap: "https://kayecandy.github.io/cdn/boxxerworld/materials/quilted_normal.jpg",
           },
         },
       },
       style: {
         backgroundColor: "#ffffff",
-        backgroundImage: "url(/materials/white-quilted.jpg)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/white-quilted.jpg)",
       },
     },
     {
@@ -299,13 +299,13 @@ const CONFIG = {
           wrapS: RepeatWrapping,
           wrapT: RepeatWrapping,
           maps: {
-            normalMap: "/materials/quilted_normal.jpg",
+            normalMap: "https://kayecandy.github.io/cdn/boxxerworld/materials/quilted_normal.jpg",
           },
         },
       },
       style: {
         backgroundColor: "#000000",
-        backgroundImage: "url(/materials/black-quilted.jpg)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/black-quilted.jpg)",
       },
     },
     {
@@ -326,14 +326,14 @@ const CONFIG = {
           wrapT: RepeatWrapping,
           repeat: new Vector2(3, 3),
           maps: {
-            normalMap: "/materials/sequins2_normal.jpg",
-            emissiveMap: "/materials/sequins2_light.jpg",
+            normalMap: "https://kayecandy.github.io/cdn/boxxerworld/materials/sequins2_normal.jpg",
+            emissiveMap: "https://kayecandy.github.io/cdn/boxxerworld/materials/sequins2_light.jpg",
           },
         },
       },
       style: {
         backgroundColor: "rgb(183, 0, 0)",
-        backgroundImage: "url(/materials/red-sequins.jpg)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/red-sequins.jpg)",
       },
     },
     {
@@ -354,14 +354,14 @@ const CONFIG = {
           wrapT: RepeatWrapping,
           repeat: new Vector2(4, 4),
           maps: {
-            normalMap: "/materials/sequins2_normal.jpg",
-            emissiveMap: "/materials/sequins2_light.jpg",
+            normalMap: "https://kayecandy.github.io/cdn/boxxerworld/materials/sequins2_normal.jpg",
+            emissiveMap: "https://kayecandy.github.io/cdn/boxxerworld/materials/sequins2_light.jpg",
           },
         },
       },
       style: {
         backgroundColor: "#ffffff",
-        backgroundImage: "url(/materials/white-sequins.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/white-sequins.webp)",
       },
     },
     {
@@ -382,15 +382,15 @@ const CONFIG = {
           wrapT: RepeatWrapping,
           repeat: new Vector2(1.2, 1.2),
           maps: {
-            normalMap: "/materials/sequins-reversed-normal.jpg",
-            emissiveMap: "/materials/sequins-reversed-light.jpg",
-            map: "/materials/black-gold-reversible-map.webp",
+            normalMap: "https://kayecandy.github.io/cdn/boxxerworld/materials/sequins-reversed-normal.jpg",
+            emissiveMap: "https://kayecandy.github.io/cdn/boxxerworld/materials/sequins-reversed-light.jpg",
+            map: "https://kayecandy.github.io/cdn/boxxerworld/materials/black-gold-reversible-map.webp",
           },
         },
       },
       style: {
         backgroundColor: "#dfbb3b",
-        backgroundImage: "url(/materials/black-gold-reversible.webp)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/black-gold-reversible.webp)",
       },
     },
     {
@@ -408,13 +408,13 @@ const CONFIG = {
           wrapT: RepeatWrapping,
           repeat: new Vector2(3, 3),
           maps: {
-            map: "/materials/baroque.jpg",
+            map: "https://kayecandy.github.io/cdn/boxxerworld/materials/baroque.jpg",
           },
         },
       },
       style: {
         backgroundColor: "rgb(0, 0, 0)",
-        backgroundImage: "url(/materials/baroque.jpg)",
+        backgroundImage: "url(https://kayecandy.github.io/cdn/boxxerworld/materials/baroque.jpg)",
       },
     },
   ],

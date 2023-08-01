@@ -3,7 +3,7 @@ import { preload_draco } from "../_preload";
 const CONTENT = {
   name: "Playboy Robe",
   subtitle: "Custom Fightwear Robe",
-  preview: "url(/3d/robes/playboy/preview.webp)",
+  preview: "url(https://kayecandy.github.io/cdn/boxxerworld/3d/robes/playboy/preview.webp)",
   controls: {
     styles: false,
     name: true,
@@ -16,30 +16,30 @@ const CONTENT = {
     {
       id: "main",
       name: "Main Material",
-      url: "/3d/robes/playboy/main.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/robes/playboy/main.glb",
       hasTexture: true,
     },
     {
       id: "trim",
       name: "Trim",
-      url: "/3d/robes/playboy/trim.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/robes/playboy/trim.glb",
     },
     {
       id: "collar",
       name: "Collar",
-      url: "/3d/robes/playboy/collar.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/robes/playboy/collar.glb",
       hasTexture: true,
     },
     {
       id: "cuffs",
       name: "Cuffs",
-      url: "/3d/robes/base/cuffs.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/robes/base/cuffs.glb",
       hasTexture: true,
     },
     {
       id: "belt",
       name: "Belt",
-      url: "/3d/robes/base/belt.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/robes/base/belt.glb",
       hasTexture: true,
     },
   ],

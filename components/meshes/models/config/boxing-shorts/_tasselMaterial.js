@@ -3,8 +3,8 @@ import { RepeatWrapping, Vector2 } from "three";
 export const tasselMaterial = {
   textures: {
     maps: {
-      alphaMap: "/3d/boxing-shorts/textures/tassels-opacity.jpg",
-      bumpMap: "/3d/boxing-shorts/textures/tassels-bump.jpg",
+      alphaMap: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/textures/tassels-opacity.jpg",
+      bumpMap: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/textures/tassels-bump.jpg",
     },
     wrapS: RepeatWrapping,
     wrapT: RepeatWrapping,

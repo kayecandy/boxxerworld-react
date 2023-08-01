@@ -4,7 +4,7 @@ import { tasselMaterial } from "./_tasselMaterial";
 const CONTENT = {
   name: "Classic BX",
   subtitle: "Custom Fightwear Short",
-  preview: "url(/3d/boxing-shorts/classic/preview.webp)",
+  preview: "url(https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/preview.webp)",
   controls: {
     styles: true,
     name: true,
@@ -17,13 +17,13 @@ const CONTENT = {
     {
       id: "waist",
       name: "Waistband",
-      url: "/3d/boxing-shorts/waistband/waist.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/waistband/waist.glb",
       hasTexture: true,
     },
     {
       id: "waist-logo",
       name: "Waistband Logo",
-      url: "/3d/boxing-shorts/waistband/waist-logo.glb",
+      url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/waistband/waist-logo-5-small.glb",
       hasTexture: true,
     },
   ],
@@ -35,13 +35,13 @@ const CONTENT = {
         {
           id: "body",
           name: "Main Colour",
-          url: "/3d/boxing-shorts/classic/body_side-slit.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/body_side-slit.glb",
           hasTexture: true,
         },
         {
           id: "stitching-bottom",
           name: "Leg Trim",
-          url: "/3d/boxing-shorts/classic/stitching-bottom_side-slit.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/stitching-bottom_side-slit.glb",
           hasTexture: true,
         },
       ],
@@ -53,13 +53,13 @@ const CONTENT = {
         {
           id: "body",
           name: "Main Colour",
-          url: "/3d/boxing-shorts/classic/body_curve.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/body_curve.glb",
           hasTexture: true,
         },
         {
           id: "stitching-bottom",
           name: "Leg Trim",
-          url: "/3d/boxing-shorts/classic/stitching-bottom_curve.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/stitching-bottom_curve.glb",
           hasTexture: true,
         },
       ],
@@ -71,13 +71,13 @@ const CONTENT = {
         {
           id: "body",
           name: "Main Colour",
-          url: "/3d/boxing-shorts/classic/body_side-slit.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/body_side-slit.glb",
           hasTexture: true,
         },
         {
           id: "stitching-bottom",
           name: "Leg Trim",
-          url: "/3d/boxing-shorts/classic/stitching-bottom_side-slit.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/stitching-bottom_side-slit.glb",
           hasTexture: true,
         },
       ],
@@ -100,13 +100,13 @@ const CONTENT = {
         {
           id: "body",
           name: "Main Colour",
-          url: "/3d/boxing-shorts/classic/body_curve.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/body_curve.glb",
           hasTexture: true,
         },
         {
           id: "stitching-bottom",
           name: "Leg Trim",
-          url: "/3d/boxing-shorts/classic/stitching-bottom_curve.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/stitching-bottom_curve.glb",
           hasTexture: true,
         },
       ],
@@ -129,13 +129,13 @@ const CONTENT = {
         {
           id: "waist-tassels",
           name: "Tassels",
-          url: "/3d/boxing-shorts/waistband/waist-tassels.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/waistband/waist-tassels.glb",
           baseMaterial: tasselMaterial,
         },
         {
           id: "tassels-bottom",
           name: "Tassels",
-          url: "/3d/boxing-shorts/classic/tassels-bottom_side-slit.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/tassels-bottom_side-slit.glb",
           baseMaterial: tasselMaterial,
         },
       ],
@@ -147,13 +147,13 @@ const CONTENT = {
         {
           id: "waist-tassels",
           name: "Tassels",
-          url: "/3d/boxing-shorts/waistband/waist-tassels.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/waistband/waist-tassels.glb",
           baseMaterial: tasselMaterial,
         },
         {
           id: "tassels-bottom",
           name: "Tassels",
-          url: "/3d/boxing-shorts/classic/tassels-bottom_curve.glb",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/tassels-bottom_curve.glb",
           baseMaterial: tasselMaterial,
         },
       ],
