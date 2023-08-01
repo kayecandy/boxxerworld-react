@@ -16,8 +16,6 @@ module.exports = {
 
     return config;
   },
-  typescript: {
-    ignoreBuildErrors: true
-  },
+  transpilePackages: ["three"],
   output: 'export'
 };
