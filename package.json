@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "update-packages": "ncu --upgrade"
+        "update-packages": "ncu --upgrade",
+        "deploy:github": "scripts\\deploy-github.bat"
     },
     "dependencies": {
         "@react-three/drei": "^9.80.0",
