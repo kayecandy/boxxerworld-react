@@ -38,6 +38,8 @@ export default function NameCanvas({ name }) {
         fill: "red",
         fontFamily: "Arial Black, Arial",
         fontWeight: "900",
+        stroke: "orange",
+        strokeWidth: 3,
       });
 
       fabricRef.current.add(fText);
