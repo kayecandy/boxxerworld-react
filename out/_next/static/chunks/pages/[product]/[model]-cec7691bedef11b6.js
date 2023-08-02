@@ -1,1 +1,0 @@
-(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[898],{2086:function(n,u,t){(window.__NEXT_P=window.__NEXT_P||[]).push(["/[product]/[model]",function(){return t(7080)}])},7080:function(n,u,t){"use strict";t.r(u);var _=t(2095);u.default=_.default}},function(n){n.O(0,[728,737,498,89,699,664,774,888,179],function(){return n(n.s=2086)}),_N_E=n.O()}]);
