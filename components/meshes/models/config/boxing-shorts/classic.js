@@ -158,6 +158,38 @@ const CONTENT = {
         },
       ],
     },
+    {
+      hasCrystals: true,
+      legCut: "side-slit",
+      parts: [
+        {
+          id: "crystals-front",
+          name: "Crystals",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/crystals-front_side-slit.glb"
+        },
+        {
+          id: "crystals-back",
+          name: "Crystals",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/crystals-back_side-slit.glb"
+        }
+      ]
+    },
+    {
+      hasCrystals: true,
+      legCut: "curve",
+      parts: [
+        {
+          id: "crystals-front",
+          name: "Crystals",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/crystals-front_curve.glb"
+        },
+        {
+          id: "crystals-back",
+          name: "Crystals",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/classic/crystals-back_curve.glb"
+        }
+      ]
+    }
   ],
 };
 

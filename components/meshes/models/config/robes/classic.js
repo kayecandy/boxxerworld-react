@@ -53,7 +53,20 @@ const CONTENT = {
       url: "https://kayecandy.github.io/cdn/boxxerworld/3d/robes/base/cuffs.glb",
       hasTexture: true,
     },
+    
   ],
+  variations: [
+    {
+      hasCrystals: true,
+      parts: [
+        {
+          id: "crystals",
+          name: "Crystals",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/robes/classic/hood-inside-crystals.glb"
+        }
+      ]
+    }
+  ]
 };
 
 preload_draco(CONTENT);

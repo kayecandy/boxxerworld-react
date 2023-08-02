@@ -11,6 +11,7 @@ import CurrentModelPartContextProvider from "./context/CurrentModelPartContext";
 import CurrentNameContextProvider from "./context/CurrentNameContext";
 import CurrentShortSizeContextProvider from "./context/CurrentShortSizeContext";
 import GraphicsContextProvider from "./context/GraphicsContext";
+import HasCrystalsContextProvider from "./context/HasCrystalsContext";
 import HasTasselsContextProvider from "./context/HasTasselsContext";
 import NamesContextProvider from "./context/NamesContext";
 
@@ -25,15 +26,17 @@ export default function Configurator() {
                 <CurrentModelPartContextProvider>
                   <CurrentShortSizeContextProvider>
                     <CurrentLegStyleContextProvider>
-                      <HasTasselsContextProvider>
-                        <div className={`${cndce_configurator} loaded`}>
-                          <Canvas></Canvas>
+                      <HasCrystalsContextProvider>
+                        <HasTasselsContextProvider>
+                          <div className={`${cndce_configurator} loaded`}>
+                            <Canvas></Canvas>
 
-                          <ControlsModel></ControlsModel>
-                          <ControlsSummary></ControlsSummary>
-                          <ControlsPanel></ControlsPanel>
-                        </div>
-                      </HasTasselsContextProvider>
+                            <ControlsModel></ControlsModel>
+                            <ControlsSummary></ControlsSummary>
+                            <ControlsPanel></ControlsPanel>
+                          </div>
+                        </HasTasselsContextProvider>
+                      </HasCrystalsContextProvider>
                     </CurrentLegStyleContextProvider>
                   </CurrentShortSizeContextProvider>
                 </CurrentModelPartContextProvider>

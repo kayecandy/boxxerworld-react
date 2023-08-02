@@ -12,7 +12,7 @@ const CONTENT = {
     graphic: true,
     flag: true,
     tassels: true,
-    crystals: true,
+    crystals: false,
   },
 
   models: [

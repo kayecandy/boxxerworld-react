@@ -119,6 +119,21 @@ const CONTENT = {
         },
       ],
     },
+    {
+      hasCrystals: true,
+      parts: [
+        {
+          id: "crystals-front",
+          name: "Crystals Front",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/side-stripe/crystals-front.glb"
+        },
+        {
+          id: "crystals-back",
+          name: "Crystals Back",
+          url: "https://kayecandy.github.io/cdn/boxxerworld/3d/boxing-shorts/side-stripe/crystals-back.glb"
+        }
+      ]
+    }
   ],
 };
 

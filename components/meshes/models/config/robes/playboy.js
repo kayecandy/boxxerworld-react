@@ -10,7 +10,7 @@ const CONTENT = {
     graphic: true,
     flag: true,
     tassels: false,
-    crystals: true,
+    // crystals: true,
   },
   models: [
     {

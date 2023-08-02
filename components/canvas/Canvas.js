@@ -13,6 +13,7 @@ import { CurrentModelPartContext } from "../configurator/context/CurrentModelPar
 import { CurrentNameContext } from "../configurator/context/CurrentNameContext";
 import { CurrentShortSizeContext } from "../configurator/context/CurrentShortSizeContext";
 import { GraphicsContext } from "../configurator/context/GraphicsContext";
+import { HasCrystalsContext } from "../configurator/context/HasCrystalsContext";
 import { HasTasselsContext } from "../configurator/context/HasTasselsContext";
 import { NamesContext } from "../configurator/context/NamesContext";
 import CurrentModel from "../meshes/models/CurrentModel";
@@ -45,7 +46,8 @@ export default function Canvas({
     CurrentModelPartContext,
     CurrentLegStyleContext,
     CurrentShortSizeContext,
-    HasTasselsContext
+    HasTasselsContext,
+    HasCrystalsContext
   );
 
   useEffect(() => {
